@@ -2,6 +2,12 @@
 History
 =======
 
+release-1.0.0
+-------------
+
+No new features were added. However, this simple tool is now stable.
+
+
 release-0.0.3
 -------------
 
