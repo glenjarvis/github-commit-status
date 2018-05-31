@@ -251,7 +251,7 @@ Access Token) isn't provided, this command will look for the token in the
    environment variable::
 
       $ github_commit_status --repo=experiment_20180525 --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --status=success --description="All tests passed."
-      GitHub Token [09f197055ba0e4abed31794cc9b68085c0b137ae]:
+      GitHub Token [26fee6a5d440111a2648312d458b6b4e44c20c1d]:
       GitHub has been updated.
 
    This currently still displays the GitHub Access Token on the screen, but it
