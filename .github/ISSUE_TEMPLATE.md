@@ -2,7 +2,7 @@
 
 Details:
 
-* Commit: Output of github_commit_status --version`:
+* Commit: Output of `github_commit_status --version`:
 * Python version: Output of `python --version`:
 * Operating System:
 

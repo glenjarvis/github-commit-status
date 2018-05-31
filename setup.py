@@ -40,7 +40,8 @@ setup(
     },
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
+    long_description_content_type='text/x-rst',
     include_package_data=True,
     keywords='github_commit_status',
     name='github_commit_status',
@@ -49,6 +50,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/glenjarvis/github_commit_status',
-    version='1.0.0',
+    version='1.0.1',
     zip_safe=False,
 )

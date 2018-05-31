@@ -160,6 +160,7 @@ Find a commit in a Pull Request that you would like to update.
    secret - its like a password):
 
 .. code::
+
     $ github_commit_status
     Github token []: 26fee6a5d440111a2648312d458b6b4e44c20c1d
     Name of the GitHub repository []: experiment_20180525
