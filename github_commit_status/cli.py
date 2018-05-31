@@ -81,7 +81,7 @@ def print_version(ctx, param, value):
 @click.option('--version', is_flag=True, callback=print_version,
               expose_value=False, is_eager=True)
 def main(repo, github_token, commit, status, description):
-    """Simulate a test suite status update on COUNT."""
+    """Update GitHub with the arguments given"""
     update_github(repo, github_token, commit, status, description)
 
 
