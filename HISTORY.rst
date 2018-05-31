@@ -2,6 +2,19 @@
 History
 =======
 
+release-1.0.1
+-------------
+
+.. _release_1_0_1_bugs_fixed:
+
+Bugs Fixed
+^^^^^^^^^^
+
+  * `Add missing backtick in template <https://github.com/glenjarvis/github_commit_status/pull/7>`_
+  * `Readme rst does not pass rstcheck <https://github.com/glenjarvis/github_commit_status/pull/9>`_
+  * `Add long_description_content_type <https://github.com/glenjarvis/github_commit_status/pull/11>`_
+
+
 release-1.0.0
 -------------
 
