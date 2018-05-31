@@ -2,6 +2,16 @@
 History
 =======
 
+release-0.0.3
+-------------
+
+.. _release_0_0_3_bugs_fixed:
+
+Bugs Fixed
+^^^^^^^^^^
+
+  * `Fix appveyor <https://github.com/glenjarvis/github_commit_status/pull/5>`_
+
 release-0.0.2
 -------------
 
@@ -11,7 +21,6 @@ Bugs Fixed
 ^^^^^^^^^^
 
   * `Re-add '__version__' to module <https://github.com/glenjarvis/github_commit_status/pull/3>`_
-      Merge pull request #3 from glenjarvis/sphinx-configuration-error
 
 .. _release_0_0_2_features_added:
 
