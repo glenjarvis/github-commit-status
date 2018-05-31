@@ -96,56 +96,59 @@ Profile Settings
 
 In the upper right hand corner, you will see your avatar photo (or a default
 avatar image). When you click the avatar, there will be a drop down menu with
-menu options.
+menu options. Choose the **Settings** option.
 
 .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_3_account_settings.png
 
-Choose the **Settings** option.
 
 
 Developer Settings
 """"""""""""""""""
 
 On the next page that is loaded, the Profile settings page, you will see another
-menu to the left. It is a longer menu where the bottom looks similar to:
+menu to the left. It is a longer menu where the bottom looks similar to the
+following. Choose **Developer settings**:
 
 .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_4_developer_settings.png
-
-Choose **Developer settings**.
 
 
 Create a Personal Access Token
 """"""""""""""""""""""""""""""
 On the next page, the Developer Settings page, you will see one final menu.
+Choose **Personal access tokens**:
 
 .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_5_personal_accesstokens.png
 
-Choose **Personal access tokens**.
 
 
 1. Press the button to **Generate new token**.
+
 2. In the **Token description** enter "github_commit_status". This way we
    remember the purpose of this token.
+
 3. Select the **repo:status** scope checkbox. Anyone who has this token could
    update your GitHub account. So, keep the scope of that the token can do to be
    **only** updating or accessing the commit status.
-   .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
+
 4. Scroll to the bottom of click the green **Generate token** button.
-5. Your should now be displayed. This token will only display this time. You
-   won't be able to see it again and it cannot be recovered.
+
+5. Your token should now be displayed. This token will only display this time.
+   You won't be able to see it again and it cannot be recovered.
+
 6. Keep your token safe so that you can use it with this program. Remember, if
    someone else can access this token, they can update your GitHub statuses -
    even if you don't want them to.
 
 
-Example: Used rarely
---------------------
+Example: When needed rarely
+---------------------------
 
 If you only need to use this comand line rarely, there's no need to worry about
 getting the command line arguments correct - you will be prompted for any
 required arguments that are missing. This is ideal for students in my class who
 only need to update a Pull Requests a few times for a homework assignment. See
-the next section for a more scritable example.
+the next section for a more scriptable and professional example.
 
 
 1. Install::
@@ -159,9 +162,9 @@ the next section for a more scritable example.
 3. Enter the data that you have collected (e.g., Personal Access Token, commit
    SHA, etc.)
 
-   Here is an example that I used for one of my projects. Remember, don't
-   let your Personal Access Token get published like I did here. I ensured this
-   token was deleted before I published this::
+   Here is an example that I used for one of my projects. Remember, don't let
+   your Personal Access Token get published like I intentionally did here. I
+   ensured this token was deleted before I published this::
 
      $ github_commit_status
      Github token []: 26fee6a5d440111a2648312d458b6b4e44c20c1d
@@ -205,13 +208,13 @@ next example for a better option.
 3. Here is an example usage. Remember, using your Personal Access Token
    on the command line isn't as secure::
 
-      $ github_commit_status --github-token=26fee6a5d440111a2648312d458b6b4e44c20c1d --repo=experiment_20180525 --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --status=failure --description="There are failed tests."
+      $ github_commit_status --status=failure --description="There are failed tests." --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --repo=experiment_20180525 --github-token=26fee6a5d440111a2648312d458b6b4e44c20c1d
 
 
 Example: Scripting with better security
 ---------------------------------------
 
-THis command can be used for shell scripts to update GitHub without including
+This command can be used for shell scripts to update GitHub without including
 the Personal Access Token as an option. If GitHub token (e.g., your Personal
 Access Token) isn't provided, this command will look for the token in the
 **GITHUB_COMMIT_STATUS_TOKEN** environment variable.
@@ -245,7 +248,7 @@ Access Token) isn't provided, this command will look for the token in the
 
 4. Here is an example usage. However, we simply neglect to include the::
 
-     --github-token**
+     --github-token
 
    argument as we have already set the **GITHUB_COMMIT_STATUS_TOKEN**
    environment variable::
