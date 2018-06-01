@@ -2,6 +2,18 @@
 History
 =======
 
+
+release-1.0.2
+-------------
+
+.. _release_1_0_2_bugs_fixed:
+
+Bugs Fixed
+^^^^^^^^^^
+
+  * `Fix incorrect docstring for main() <https://github.com/glenjarvis/github_commit_status/pull/15>`_
+  * `Write better introduction <https://github.com/glenjarvis/github_commit_status/pull/16>`_
+
 release-1.0.1
 -------------
 
