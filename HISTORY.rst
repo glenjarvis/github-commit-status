@@ -3,6 +3,17 @@ History
 =======
 
 
+release-1.0.3
+-------------
+
+.. _release_1_0_3_bugs_fixed:
+
+Bugs Fixed
+^^^^^^^^^^
+
+  * `Convert images to links <https://github.com/glenjarvis/github_commit_status/pull/19>`_
+  * `Fix GitHub deep image links <https://github.com/glenjarvis/github_commit_status/pull/18>`_
+
 release-1.0.2
 -------------
 
