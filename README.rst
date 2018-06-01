@@ -2,7 +2,7 @@
 github_commit_status
 ====================
 
-A simple command line for updating a GitHub status
+A simple command line for updating a commit's status in GitHub
 
 Project and Build Status
 ------------------------
@@ -127,9 +127,10 @@ Choose **Personal access tokens**:
    remember the purpose of this token.
 
 3. Select the **repo:status** scope checkbox. Anyone who has this token could
-   update your GitHub account. So, keep the scope of that the token can do to be
-   **only** updating or accessing the commit status.
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
+   update your GitHub account. So, keep the scope of this token so that it can
+   **only** update or access the commit status.
+
+   .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
 
 4. Scroll to the bottom of click the green **Generate token** button.
 
