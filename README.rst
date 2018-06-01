@@ -43,13 +43,13 @@ This is a great way to check for things such as white space, coding standards,
 etc. Continuous Integration tools, like Travis, use this to update the status
 of the commit that you see in Pull Requests in GitHub.
 
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_1_background.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_1_background.png
 
 This is a fairly simple integration and you can also place your own checks here.
 In the following example, I made the status pending with a yellow circle with
 the phrase "You know you can change this, right?"
 
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_2_custom_status.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_2_custom_status.png
 
 This command line tool will allow you to update the status of any commit that
 you have access to in GitHub. It was built to be a teaching tool for a course
@@ -103,7 +103,7 @@ In the upper right hand corner, you will see your avatar photo (or a default
 avatar image). When you click the avatar, there will be a drop down menu with
 menu options. Choose the **Settings** option.
 
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_3_account_settings.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_3_account_settings.png
 
 
 
@@ -114,7 +114,7 @@ On the next page that is loaded, the Profile settings page, you will see another
 menu to the left. It is a longer menu where the bottom looks similar to the
 following. Choose **Developer settings**:
 
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_4_developer_settings.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_4_developer_settings.png
 
 
 Create a Personal Access Token
@@ -122,7 +122,7 @@ Create a Personal Access Token
 On the next page, the Developer Settings page, you will see one final menu.
 Choose **Personal access tokens**:
 
-.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_5_personal_accesstokens.png
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_5_personal_accesstokens.png
 
 
 
@@ -135,7 +135,7 @@ Choose **Personal access tokens**:
    update your GitHub account. So, keep the scope of this token so that it can
    **only** update or access the commit status.
 
-   .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
+   .. image:: https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_6_generate_personal_access_tokens.png
 
 4. Scroll to the bottom of click the green **Generate token** button.
 
