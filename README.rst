@@ -2,7 +2,7 @@
 github_commit_status
 ====================
 
-A simple command line for updating a GitHub status
+A simple command line for updating a commit's status in GitHub
 
 Project and Build Status
 ------------------------
@@ -32,35 +32,68 @@ Project and Build Status
 * Free software: `LICENSE <https://github.com/glenjarvis/github_commit_status/blob/master/LICENSE>`_
 
 
-How to Configure
------------------
+How to Use
+----------
 
-Background
-^^^^^^^^^^
+Background and Purpose
+^^^^^^^^^^^^^^^^^^^^^^
 
-If you have every looked at a Pull Request in GitHub, you've seen that there are
-"Checks" that should pass before the Pull Request is merged. If all is well, you
-will see a message like "All checks have passed" and a big green button "Merge
-pull request." Or, on a very bad day, you may see a large red 'X' with a message
-like 'All checks have failed.'
+In GitHub, Pull Requests can have some checks against the code in question.
+This is a great way to check for things such as white space, coding standards,
+etc. Continuous Integration tools, like Travis, use this to update the status
+of the commit that you see in Pull Requests in GitHub.
 
-How exactly does that get set? To help teach about GitHub integrations, this
-command was made so one can see how updates to Git Hub pull requests are made.
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_1_background.png
 
-In reality, this is an update of a "status" of a commit hash. And, GitHub
-reflects those statuses in a Pull Request.
+This is a fairly simple integration and you can also place your own checks here.
+In the following example, I made the status pending with a yellow circle with
+the phrase "You know you can change this, right?"
+
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_2_custom_status.png
+
+This command line tool will allow you to update the status of any commit that
+you have access to in GitHub. It was built to be a teaching tool for a course
+on Source Control Management (Git) and GitHub integrations. However, it is
+stable and can be used in production seamlessly -- especially environments
+where it makes sense to use a command line instead of your own library.
+
+
+Gather the info that you need
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To update the status of a commit in a Pull Request, you will need to provide
+some basic information:
+
+1. The name of the GitHub repository which has your Pull Request
+
+2. The commit SHA that is to be updated (e.g., the last commit  in a pull
+   request)
+
+3. The desired status of the commit:
+    - "success" (GitHub displays a green checkmark)
+    - "pending" (GitHub displays a yellow circle)
+    - "error" or "failure" (GitHub displays a red 'X')
+
+4. Description (e.g., "You know you can change this, right?" was the description
+   used in the example above)
+
+5. Authorization token. This will allow the command to act like you.
+   Instructions on how to create this token follow.
+
 
 Personal Access Token
 ^^^^^^^^^^^^^^^^^^^^^
 
-This code is intended to change the status of a GitHub Pull Request. That is
-something that should only be allowed by someone who is authorized. You wouldn't
-want someone that you hadn't authorized updating your Pull Request statuses. So,
-you will need to generate a Personal Access Token so that you can authorize
-yourself to update.
+This tool is intended to change the status of a GitHub Pull Request. That is
+something that should only be allowed by someone who is authorized. You
+wouldn't want someone that you hadn't authorized updating your Pull Request
+statuses.
 
-This is done in your account settings configuration. Don't confuse the project
-settings with the settings for your account
+You will need to generate a Personal Access Token so that this command line can
+act like you. Keep this token safe -- it is like a password.
+
+This is done in your account settings configuration. Don't confuse the
+project's settings with your settings for your account.
 
 
 Profile Settings
@@ -68,107 +101,174 @@ Profile Settings
 
 In the upper right hand corner, you will see your avatar photo (or a default
 avatar image). When you click the avatar, there will be a drop down menu with
-meu options such as:
+menu options. Choose the **Settings** option.
 
-- Signed in as...
-- Your profile
-- Your stars
-- Your gists
-- Help
-- **Settings**
-- Sign out
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_3_account_settings.png
 
-Choose the **Settings** option.
 
 
 Developer Settings
 """"""""""""""""""
 
 On the next page that is loaded, the Profile settings page, you will see another
-menu to the left. It is a longer menu where the bottom looks similar to:
+menu to the left. It is a longer menu where the bottom looks similar to the
+following. Choose **Developer settings**:
 
-- Repositories
-- Organizations
-- Saved replies
-- Applications
-
-- **Developer settings**
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_4_developer_settings.png
 
 
-Note that **Developer settings** is offset from the other menu. Choose
-**Developer settings**.
+Create a Personal Access Token
+""""""""""""""""""""""""""""""
+On the next page, the Developer Settings page, you will see one final menu.
+Choose **Personal access tokens**:
 
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_5_personal_accesstokens.png
 
-Personal Access Tokens
-""""""""""""""""""""""
-Os the next page, the Developer Settings page, you will see one final menu:
-
-- OAuth Apps
-- GitHub Apps
-- **Personal access tokens**
-
-Choose **Personal access tokens**.
 
 
 1. Press the button to **Generate new token**.
+
 2. In the **Token description** enter "github_commit_status". This way we
    remember the purpose of this token.
+
 3. Select the **repo:status** scope checkbox. Anyone who has this token could
-   update your GitHub account. So, keep the scope of that the token can do to be
-   **only** updating or accessing the commit status.
+   update your GitHub account. So, keep the scope of this token so that it can
+   **only** update or access the commit status.
+
+   .. image:: https://github.com/glenjarvis/github_commit_status/blob/write_better_introduction/docs/imgs/figure_6_generate_personal_access_tokens.png
+
 4. Scroll to the bottom of click the green **Generate token** button.
-5. Your should now be displayed. This token will only display this time. You
-   won't be able to see it again and it cannot be recovered.
+
+5. Your token should now be displayed. This token will only display this time.
+   You won't be able to see it again and it cannot be recovered.
+
 6. Keep your token safe so that you can use it with this program. Remember, if
    someone else can access this token, they can update your GitHub statuses -
    even if you don't want them to.
 
 
-Name of the repository
-^^^^^^^^^^^^^^^^^^^^^^
+Example: When needed rarely
+---------------------------
 
-The Personal Access Token that you have generated above can be used to update
-any repository that you have access to. You will need to specify the repository
-to update.
-
-Remember, the GitHub URL has the repository name. The format is as follows:
-
-https://github.com/<github_username>/<project_name>
-
-For example, the Linux GitHub repository is at this URL:
-
-https://github.com/torvalds/linux
-
-The username is **torvalds** (Linus Torvalds) and the GitHub respoitory name is
-**linux**.
-
-You will need the name of your repository when using this program.
+If you only need to use this comand line rarely, there's no need to worry about
+getting the command line arguments correct - you will be prompted for any
+required arguments that are missing. This is ideal for students in my class who
+only need to update a Pull Requests a few times for a homework assignment. See
+the next section for a more scriptable and professional example.
 
 
-How to use
-----------
+1. Install::
 
-Find a commit in a Pull Request that you would like to update.
+     pip install github_commit_status
 
-1. `pip install github_commit_status`
+2. Run::
 
-2. run `github_commit_status`
+     github_commit_status
 
-3. Enter the data that you have collected as seen in the code snippet below.
-   Don't worry, I deleted this GitHub token in this example before this was ever
-   published. (You should *always* keep your Personal Access Tokens to GitHub a
-   secret - its like a password):
+3. Enter the data that you have collected (e.g., Personal Access Token, commit
+   SHA, etc.)
 
-.. code::
+   Here is an example that I used for one of my projects. Remember, don't let
+   your Personal Access Token get published like I intentionally did here. I
+   ensured this token was deleted before I published this::
 
-    $ github_commit_status
-    Github token []: 26fee6a5d440111a2648312d458b6b4e44c20c1d
-    Name of the GitHub repository []: experiment_20180525
-    Commit SHA []: 2dd5f9ce1108d69e863444ee6486e64e0299868f
-    Status: pending
-    Description: Tests are running
-    GitHub has been updated.
+     $ github_commit_status
+     Github token []: 26fee6a5d440111a2648312d458b6b4e44c20c1d
+     Name of the GitHub repository []: experiment_20180525
+     Commit SHA []: 2dd5f9ce1108d69e863444ee6486e64e0299868f
+     Status: pending
+     Description: Tests are running
+     GitHub has been updated.
 
+
+Example: For scripting
+----------------------
+
+This command can also be used for shell scripts that need to update GitHub. In
+this example, we include the Personal Access Token as a command line option.
+That's not as secure, since the shell keeps a history of your commands. See the
+next example for a better option.
+
+
+1. Install::
+
+     pip install github_commit_status
+
+2. To see command line options that can be provided::
+
+    $ github_commit_status --help
+    Usage: github_commit_status [OPTIONS]
+
+      Update GitHub with the arguments given
+
+    Options:
+      --github-token TEXT
+      --repo TEXT                     Name of the GitHub repository
+      --commit TEXT                   The 40 character SHA1 string for the commit.
+      --status [error|failure|pending|success]
+                                      The status of the commit
+      --description TEXT              Description for the test
+      --version
+      --help                          Show this message and exit.
+
+3. Here is an example usage. Remember, using your Personal Access Token
+   on the command line isn't as secure::
+
+      $ github_commit_status --status=failure --description="There are failed tests." --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --repo=experiment_20180525 --github-token=26fee6a5d440111a2648312d458b6b4e44c20c1d
+
+
+Example: Scripting with better security
+---------------------------------------
+
+This command can be used for shell scripts to update GitHub without including
+the Personal Access Token as an option. If GitHub token (e.g., your Personal
+Access Token) isn't provided, this command will look for the token in the
+**GITHUB_COMMIT_STATUS_TOKEN** environment variable.
+
+
+1. Install::
+
+     pip install github_commit_status
+
+2. Export the GITHUB_COMMIT_STATUS_TOKEN. For example, in the Bash shell::
+
+     export GITHUB_COMMIT_STATUS_TOKEN=26fee6a5d440111a2648312d458b6b4e44c20c1d
+
+3. To see command line options that can be provided::
+
+    $ github_commit_status --help
+    Usage: github_commit_status [OPTIONS]
+
+      Update GitHub with the arguments given
+
+    Options:
+      --github-token TEXT
+      --repo TEXT                     Name of the GitHub repository
+      --commit TEXT                   The 40 character SHA1 string for the commit.
+      --status [error|failure|pending|success]
+                                      The status of the commit
+      --description TEXT              Description for the test
+      --version
+      --help                          Show this message and exit.
+
+
+4. Here is an example usage. However, we simply neglect to include the::
+
+     --github-token
+
+   argument as we have already set the **GITHUB_COMMIT_STATUS_TOKEN**
+   environment variable::
+
+      $ github_commit_status --repo=experiment_20180525 --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --status=success --description="All tests passed."
+      GitHub Token [26fee6a5d440111a2648312d458b6b4e44c20c1d]:
+      GitHub has been updated.
+
+   This currently still displays the GitHub Access Token on the screen, but it
+   is not recorded into your shell's history. In future versions of this command
+   line, we will prevent the Personal Access Token from displaying on the screen
+   as well. `Lucky Issue #13
+   <https://github.com/glenjarvis/github_commit_status/issues/13>`_ is used to
+   track the status of this change
 
 
 Make this better by Contributing
