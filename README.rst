@@ -266,9 +266,9 @@ Access Token) isn't provided, this command will look for the token in the
    This currently still displays the GitHub Access Token on the screen, but it
    is not recorded into your shell's history. In future versions of this command
    line, we will prevent the Personal Access Token from displaying on the screen
-   as well. `Lucky Issue #13 <https://github.com/glenjarvis/github_commit_status/issues/13>`
-   is used to track the status of this change
-
+   as well. `Lucky Issue #13
+   <https://github.com/glenjarvis/github_commit_status/issues/13>`_ is used to
+   track the status of this change
 
 
 Make this better by Contributing
