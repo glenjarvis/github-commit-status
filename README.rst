@@ -65,13 +65,18 @@ To update the status of a commit in a Pull Request, you will need to provide
 some basic information:
 
 1. The name of the GitHub repository which has your Pull Request
-2. The commit SHA that is updated (e.g., the last commit  in a pull request)
+
+2. The commit SHA that is to be updated (e.g., the last commit  in a pull
+   request)
+
 3. The desired status of the commit:
     - "success" (GitHub displays a green checkmark)
     - "pending" (GitHub displays a yellow circle)
     - "error" or "failure" (GitHub displays a red 'X')
+
 4. Description (e.g., "You know you can change this, right?" was the description
    used in the example above)
+
 5. Authorization token. This will allow the command to act like you.
    Instructions on how to create this token follow.
 
@@ -261,9 +266,8 @@ Access Token) isn't provided, this command will look for the token in the
    This currently still displays the GitHub Access Token on the screen, but it
    is not recorded into your shell's history. In future versions of this command
    line, we will prevent the Personal Access Token from displaying on the screen
-   as well. `Lucky Issue #13
-   <https://github.com/glenjarvis/github_commit_status/issues/13>`. is used to
-   track the status of this change
+   as well. `Lucky Issue #13 <https://github.com/glenjarvis/github_commit_status/issues/13>`
+   is used to track the status of this change
 
 
 
