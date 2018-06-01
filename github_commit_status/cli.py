@@ -34,7 +34,7 @@ import os
 import click
 from github import Github
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 
 
 def update_github(repo_name, github_token, commit, status, description):
