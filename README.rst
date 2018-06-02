@@ -27,9 +27,9 @@ Project and Build Status
      :target: https://ci.appveyor.com/project/glenjarvis/github_commit_status/branch/master
      :alt: Windows build status on Appveyor
 
-* GitHub repo: https://github.com/glenjarvis/github_commit_status/
-* Documentation: `Read The Docs <https://github_commit_status.readthedocs.io/>`_
-* Free software: `LICENSE <https://github.com/glenjarvis/github_commit_status/blob/master/LICENSE>`_
+* `GitHub repo <https://github.com/glenjarvis/github_commit_status/>`_
+* `Online Documentation <https://github-commit-status.readthedocs.io/en/latest/readme.html>`_
+* `Free Software <https://github.com/glenjarvis/github_commit_status/blob/master/LICENSE>`_
 
 
 How to Use
@@ -145,14 +145,14 @@ Choose **Personal access tokens**:
    even if you don't want them to.
 
 
-Example: When needed rarely
----------------------------
+Example: Prompt mode
+--------------------
 
 If you only need to use this comand line rarely, there's no need to worry about
 getting the command line arguments correct - you will be prompted for any
 required arguments that are missing. This is ideal for students in my class who
 only need to update a Pull Requests a few times for a homework assignment. See
-the next section for a more scriptable and professional example.
+the next section for a more scriptable mode and example.
 
 
 1. Install::
@@ -161,7 +161,7 @@ the next section for a more scriptable and professional example.
 
 2. Run::
 
-     github_commit_status
+     github_commit_status prompt
 
 3. Enter the data that you have collected (e.g., Personal Access Token, commit
    SHA, etc.)
@@ -170,22 +170,31 @@ the next section for a more scriptable and professional example.
    your Personal Access Token get published like I intentionally did here. I
    ensured this token was deleted before I published this::
 
-     $ github_commit_status
-     Github token []: 26fee6a5d440111a2648312d458b6b4e44c20c1d
-     Name of the GitHub repository []: experiment_20180525
+     $ github_commit_status prompt
+
+     GitHub Token [26fee6a5d440111a2648312d458b6b4e44c20c1d]:
+     Name of the GitHub repository []: my_target_repo
      Commit SHA []: 2dd5f9ce1108d69e863444ee6486e64e0299868f
      Status: pending
-     Description: Tests are running
+     Description: Tests have started
+
      GitHub has been updated.
 
 
 Example: For scripting
 ----------------------
 
-This command can also be used for shell scripts that need to update GitHub. In
-this example, we include the Personal Access Token as a command line option.
-That's not as secure, since the shell keeps a history of your commands. See the
-next example for a better option.
+This command can also be used for shell scripts that need to update GitHub.
+
+For security reasons, this mode/subcommand does not provide an option for::
+
+    --github-token
+
+as this is preserved in most shell histories. Instead, the
+environment variable *GITHUB_COMMIT_STATUS_TOKEN* should already be set. For
+example, in a bash shell::
+
+  export GITHUB_COMMIT_STATUS_TOKEN=26fee6a5d440111a2648312d458b6...
 
 
 1. Install::
@@ -194,79 +203,27 @@ next example for a better option.
 
 2. To see command line options that can be provided::
 
-    $ github_commit_status --help
-    Usage: github_commit_status [OPTIONS]
+    $ github_commit_status update --help
+    Usage: github_commit_status update [OPTIONS]
 
-      Update GitHub with the arguments given
-
-    Options:
-      --github-token TEXT
-      --repo TEXT                     Name of the GitHub repository
-      --commit TEXT                   The 40 character SHA1 string for the commit.
-      --status [error|failure|pending|success]
-                                      The status of the commit
-      --description TEXT              Description for the test
-      --version
-      --help                          Show this message and exit.
-
-3. Here is an example usage. Remember, using your Personal Access Token
-   on the command line isn't as secure::
-
-      $ github_commit_status --status=failure --description="There are failed tests." --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --repo=experiment_20180525 --github-token=26fee6a5d440111a2648312d458b6b4e44c20c1d
-
-
-Example: Scripting with better security
----------------------------------------
-
-This command can be used for shell scripts to update GitHub without including
-the Personal Access Token as an option. If GitHub token (e.g., your Personal
-Access Token) isn't provided, this command will look for the token in the
-**GITHUB_COMMIT_STATUS_TOKEN** environment variable.
-
-
-1. Install::
-
-     pip install github_commit_status
-
-2. Export the GITHUB_COMMIT_STATUS_TOKEN. For example, in the Bash shell::
-
-     export GITHUB_COMMIT_STATUS_TOKEN=26fee6a5d440111a2648312d458b6b4e44c20c1d
-
-3. To see command line options that can be provided::
-
-    $ github_commit_status --help
-    Usage: github_commit_status [OPTIONS]
-
-      Update GitHub with the arguments given
+      If all options are provided, update GitHub
 
     Options:
-      --github-token TEXT
-      --repo TEXT                     Name of the GitHub repository
+      --repo TEXT                     Name of the GitHub repository  [required]
       --commit TEXT                   The 40 character SHA1 string for the commit.
+                                      [required]
       --status [error|failure|pending|success]
-                                      The status of the commit
-      --description TEXT              Description for the test
-      --version
+                                      The status of the commit  [required]
+      --description TEXT              Description for the test  [required]
       --help                          Show this message and exit.
 
+3. Here is an example usage. Remember, your Personal Access Token
+   needs to be pre-set in environment variable **GITHUB_COMMIT_STATUS_TOKEN**::
 
-4. Here is an example usage. However, we simply neglect to include the::
-
-     --github-token
-
-   argument as we have already set the **GITHUB_COMMIT_STATUS_TOKEN**
-   environment variable::
-
-      $ github_commit_status --repo=experiment_20180525 --commit=2dd5f9ce1108d69e863444ee6486e64e0299868f --status=success --description="All tests passed."
-      GitHub Token [26fee6a5d440111a2648312d458b6b4e44c20c1d]:
-      GitHub has been updated.
-
-   This currently still displays the GitHub Access Token on the screen, but it
-   is not recorded into your shell's history. In future versions of this command
-   line, we will prevent the Personal Access Token from displaying on the screen
-   as well. `Lucky Issue #13
-   <https://github.com/glenjarvis/github_commit_status/issues/13>`_ is used to
-   track the status of this change
+      $ github_commit_status update --repo=my_target_repo \
+          --commit="2dd5f9ce1108d69e863444ee6486e64e0299868f" \
+          --status=pending \
+          --description="Tests are running."
 
 
 Make this better by Contributing
