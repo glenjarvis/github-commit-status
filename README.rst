@@ -28,7 +28,7 @@ Project and Build Status
      :alt: Windows build status on Appveyor
 
 * `GitHub repo <https://github.com/glenjarvis/github_commit_status/>`_
-* `Online Documentation <https://github-commit-status.readthedocs.io/en/latest/readme.html>_`
+* `Online Documentation <https://github-commit-status.readthedocs.io/en/latest/readme.html>`_
 * `Free Software <https://github.com/glenjarvis/github_commit_status/blob/master/LICENSE>`_
 
 
@@ -218,7 +218,7 @@ example, in a bash shell::
       --help                          Show this message and exit.
 
 3. Here is an example usage. Remember, your Personal Access Token
-   needs to be pre-set in environment variable *GITHUB_COMMIT_STATUS_TOKEN*::
+   needs to be pre-set in environment variable **GITHUB_COMMIT_STATUS_TOKEN**::
 
       $ github_commit_status update --repo=my_target_repo \
           --commit="2dd5f9ce1108d69e863444ee6486e64e0299868f" \
