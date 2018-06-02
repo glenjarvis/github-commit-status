@@ -2,6 +2,15 @@
 History
 =======
 
+release-1.1.0
+-------------
+
+.. _release_1_1_0_features_added:
+
+Features Added
+^^^^^^^^^^^^^^
+
+  * `Break command into two subcommands <https://github.com/glenjarvis/github_commit_status/pull/21>`_
 
 release-1.0.3
 -------------
