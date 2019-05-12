@@ -8,5 +8,5 @@ Sphinx==1.7.9
 twine==1.12.1
 rstcheck==3.3
 pycodestyle==2.5.0
-pylint==2.1.1
+pylint==2.3.1
 
