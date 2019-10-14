@@ -23,9 +23,6 @@ Project and Build Status
      :target: http://github_commit_status.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/glenjarvis/github_commit_status?branch=master&svg=true
-     :target: https://ci.appveyor.com/project/glenjarvis/github_commit_status/branch/master
-     :alt: Windows build status on Appveyor
 
 * `GitHub repo <https://github.com/glenjarvis/github_commit_status/>`_
 * `Online Documentation <https://github-commit-status.readthedocs.io/en/latest/readme.html>`_
