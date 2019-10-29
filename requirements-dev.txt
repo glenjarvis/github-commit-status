@@ -10,7 +10,7 @@ coverage==4.5.4
 docutils==0.15.2
 entrypoints==0.3
 filelock==3.0.12
-flake8==3.7.8
+flake8==3.7.9
 idna==2.8
 imagesize==1.1.0
 importlib-metadata==0.23 ; python_version < '3.8'
