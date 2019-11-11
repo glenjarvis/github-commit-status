@@ -28,7 +28,7 @@ pycodestyle==2.5.0
 pyflakes==2.1.1
 pygments==2.4.2
 pylint==2.4.3
-pyparsing==2.4.4
+pyparsing==2.4.5
 pytz==2019.3
 pyyaml==5.1.2
 readme-renderer==24.0
@@ -41,7 +41,7 @@ sphinx==2.2.1
 sphinxcontrib-jsmath==1.0.1
 toml==0.10.0
 tox==3.14.0
-tqdm==4.37.0
+tqdm==4.38.0
 twine==2.0.0
 typed-ast==1.4.0 ; implementation_name == 'cpython' and python_version < '3.8'
 urllib3==1.25.6
