@@ -42,7 +42,7 @@ sphinxcontrib-jsmath==1.0.1
 toml==0.10.0
 tox==3.14.1
 tqdm==4.38.0
-twine==2.0.0
+twine==3.0.0
 typed-ast==1.4.0 ; implementation_name == 'cpython' and python_version < '3.8'
 urllib3==1.25.7
 virtualenv==16.7.7
