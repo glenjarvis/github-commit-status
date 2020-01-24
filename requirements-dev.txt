@@ -19,7 +19,7 @@ keyring==21.1.0
 lazy-object-proxy==1.4.3
 markupsafe==1.1.1
 mccabe==0.6.1
-packaging==20.0
+packaging==20.1
 pathtools==0.1.2
 pkginfo==1.5.0.1
 pluggy==0.13.1
