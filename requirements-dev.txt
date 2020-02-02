@@ -1,6 +1,5 @@
 -i https://pypi.org/simple
 alabaster==0.7.12
-argh==0.26.2
 astroid==2.3.3
 babel==2.8.0
 bleach==3.1.0
@@ -14,7 +13,7 @@ flake8==3.7.9
 idna==2.8
 imagesize==1.2.0
 isort==4.3.21
-jinja2==2.10.3
+jinja2==2.11.1
 keyring==21.1.0
 lazy-object-proxy==1.4.3
 markupsafe==1.1.1
@@ -28,9 +27,11 @@ pycodestyle==2.5.0
 pyflakes==2.1.1
 pygments==2.5.2
 pylint==2.4.4
+pyobjc-core==6.1
+pyobjc-framework-cocoa==6.1
+pyobjc-framework-fsevents==6.1
 pyparsing==2.4.6
 pytz==2019.3
-pyyaml==5.3
 readme-renderer==24.0
 requests-toolbelt==0.9.1
 requests==2.22.0
@@ -50,6 +51,6 @@ tqdm==4.42.0
 twine==3.1.1
 urllib3==1.25.8
 virtualenv==16.7.9
-watchdog==0.9.0
+watchdog==0.10.1
 webencodings==0.5.1
 wrapt==1.11.2
