@@ -25,7 +25,7 @@ pluggy==0.13.1
 py==1.8.1
 pycodestyle==2.5.0
 pyflakes==2.1.1
-pygments==2.5.2
+pygments==2.6.1
 pylint==2.4.4
 pyobjc-core==6.1
 pyobjc-framework-cocoa==6.1
