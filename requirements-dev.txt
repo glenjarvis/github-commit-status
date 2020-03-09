@@ -53,4 +53,4 @@ urllib3==1.25.8
 virtualenv==16.7.9
 watchdog==0.10.1
 webencodings==0.5.1
-wrapt==1.11.2
+wrapt==1.12.1
