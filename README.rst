@@ -15,10 +15,6 @@ Project and Build Status
      :target: https://pyup.io/repos/github/glenjarvis/github_commit_status/
      :alt: Updates
 
-.. image:: https://pyup.io/repos/github/glenjarvis/github_commit_status/python-3-shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/github_commit_status/
-     :alt: Python 3
-
 .. image:: https://readthedocs.org/projects/github_commit_status/badge/?version=latest
      :target: http://github_commit_status.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
