@@ -29,7 +29,7 @@ pycodestyle==2.5.0
 pyflakes==2.1.1
 pygments==2.6.1
 pylint==2.4.4
-pyparsing==2.4.6
+pyparsing==2.4.7
 pytz==2019.3
 readme-renderer==25.0
 requests-toolbelt==0.9.1
