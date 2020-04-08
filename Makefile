@@ -31,6 +31,10 @@ help:
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
+tag:
+	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
+	git tag -s v$(VERSION) -m 'Release $(VERSION)'
+
 clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
