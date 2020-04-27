@@ -1,7 +1,7 @@
 -i https://pypi.org/simple
 alabaster==0.7.12
 appdirs==1.4.3
-astroid==2.3.3
+astroid==2.4.0
 babel==2.8.0
 bleach==3.1.4
 certifi==2020.4.5.1
