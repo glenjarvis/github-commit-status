@@ -76,6 +76,7 @@ reqs: ## Update all requirements
 	poetry update
 	poetry export --without-hashes -f requirements.txt -o requirements.txt
 	poetry export --without-hashes --dev -f requirements.txt -o requirements-dev.txt
+	poetry show --tree > requirements_graph.txt
 
 test: ## run tests quickly with the default Python
 	python tests/test_github_commit_status.py
