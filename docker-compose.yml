@@ -1,0 +1,20 @@
+version: '3'
+services:
+  github_commit_status:
+    build: .
+    image: github_commit_status:latest
+  github_commit_status_p3.5:
+    build:
+      context: .
+      dockerfile: ./docker_tests/Dockerfile.3.5.9 
+    image: github_commit_status_py3.5.9
+  github_commit_status_p3.6:
+    build:
+      context: .
+      dockerfile: ./docker_tests/Dockerfile.3.6.10
+    image: github_commit_status_py3.6.10
+  github_commit_status_p3.7:
+    build:
+      context: .
+      dockerfile: ./docker_tests/Dockerfile.3.7.7
+    image: github_commit_status_py3.7.7
