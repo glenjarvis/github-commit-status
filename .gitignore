@@ -87,6 +87,11 @@ celerybeat-schedule
 .spyderproject
 .spyproject
 
+# virtualenv
+.venv
+venv/
+ENV/
+
 # Rope project settings
 .ropeproject
 
