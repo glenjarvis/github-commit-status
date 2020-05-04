@@ -50,7 +50,7 @@ pyrsistent==0.14.11
 pytest==5.4.1
 pywin32-ctypes==0.2.0; python_version >= "3.5" and python_version < "4.0" and sys_platform == "win32"
 requests==2.23.0
-requests-toolbelt==0.8.0
+requests-toolbelt==0.9.1
 rstcheck==3.3.1
 secretstorage==3.1.2; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
 shellingham==1.3.2
