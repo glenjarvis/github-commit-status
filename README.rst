@@ -11,10 +11,6 @@ Project and Build Status
      :target: https://travis-ci.org/glenjarvis/github_commit_status
      :alt: Travis tests
 
-.. image:: https://pyup.io/repos/github/glenjarvis/github_commit_status/shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/github_commit_status/
-     :alt: Updates
-
 .. image:: https://readthedocs.org/projects/github_commit_status/badge/?version=latest
      :target: http://github_commit_status.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
@@ -58,18 +54,14 @@ To update the status of a commit in a Pull Request, you will need to provide
 some basic information:
 
 1. The name of the GitHub repository which has your Pull Request
-
 2. The commit SHA that is to be updated (e.g., the last commit  in a pull
    request)
-
 3. The desired status of the commit:
     - "success" (GitHub displays a green checkmark)
     - "pending" (GitHub displays a yellow circle)
     - "error" or "failure" (GitHub displays a red 'X')
-
 4. Description (e.g., "You know you can change this, right?" was the description
    used in the example above)
-
 5. Authorization token. This will allow the command to act like you.
    Instructions on how to create this token follow.
 
