@@ -75,7 +75,7 @@ lint: ## check style with flake8
 reqs: ## Update all requirements
 	poetry update
 	poetry export --without-hashes -f requirements.txt -o requirements.txt
-	poetry export --without-hashes --dev -f requirements.txt -o requirements-dev.txt
+	poetry export --without-hashes --dev -f requirements.txt -o requirements_dev.txt
 	poetry show --tree > requirements_graph.txt
 
 test: ## run tests quickly with the default Python
