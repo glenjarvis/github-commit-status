@@ -29,7 +29,7 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-clean: clean-build clean-pyc clean-test clean-images ## remove all build, test, coverage and Python artifacts
+clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
 clean-build: ## Remove build artifacts
 	rm -fr build/
@@ -93,7 +93,7 @@ tag:
 	git tag -s v$(VERSION) -m 'Release $(VERSION)'
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source github_commit_status setup.py test
+	coverage run --source github_commit_status python tests/test_github_commit_status.py
 	coverage report -m
 	coverage html
 
@@ -120,10 +120,9 @@ release: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+	poetry build
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+	poetry install
 
