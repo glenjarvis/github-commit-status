@@ -2,8 +2,6 @@
 .DEFAULT_GOAL := help
 SHELL := /bin/bash
 
-VERSION_LIST = 3.5.9 3.6.10 3.7.7
-
 define PRINT_HELP_PYSCRIPT
 import re, sys
 
@@ -14,6 +12,19 @@ for line in sys.stdin:
 		print("%-20s %s" % (target, help))
 endef
 export PRINT_HELP_PYSCRIPT
+
+
+define BROWSER_PYSCRIPT
+import os, webbrowser, sys
+try:
+	from urllib import pathname2url
+except:
+	from urllib.request import pathname2url
+
+webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
+endef
+export BROWSER_PYSCRIPT
+BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -93,12 +104,13 @@ run: ## Build docker image and run it
 	docker run -it github_commit_status bash
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/github_commit_status.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ github_commit_status
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
-	$(BROWSER) docs/_build/html/index.html
+	@echo "+ $@"
+	@rm -f docs/github_commit_status.rst
+	@sphinx-apidoc -o docs/ github_commit_status
+	@rm -f docs/modules.rst
+	@$(MAKE) -C docs clean
+	@$(MAKE) -C docs html
+	@$(BROWSER) docs/_build/html/index.html
 
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .

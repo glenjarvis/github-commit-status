@@ -6,26 +6,26 @@
 This tool will update the GitHub status for a given commit SHA1. The
 following information needs to be given so that the update can happen:
 
-    - GitHub Token. Personal Access Token (from Developer Settings) to
-      give command access to update GitHub repo. See documentation for
-      help creating. Environment variable GITHUB_COMMIT_STATUS_TOKEN is
-      taken as the default if set.
+  - GitHub Token. Personal Access Token (from Developer Settings) to
+    give command access to update GitHub repo. See documentation for
+    help creating. Environment variable GITHUB_COMMIT_STATUS_TOKEN is
+    taken as the default if set.
 
-    - The name of the GitHub repository. Environment variable
-      GITHUB_COMMIT_STATUS_REPO is taken as the default if set.
+  - The name of the GitHub repository. Environment variable
+    GITHUB_COMMIT_STATUS_REPO is taken as the default if set.
 
-    - The 40 character SHA commit string where the status will be
-      updated. Environment variable GITHUB_COMMIT_STATUS_COMMIT is taken
-      as the default if set.
+  - The 40 character SHA commit string where the status will be
+    updated. Environment variable GITHUB_COMMIT_STATUS_COMMIT is taken
+    as the default if set.
 
-    - The status of the test to be reported. There are four possible
-      choices:
-        o error
-        o failure
-        o pending
-        o success
+  - The status of the test to be reported. There are four possible
+    choices:
+      o error
+      o failure
+      o pending
+      o success
 
-    - A short description
+  - A short description
 
 There are two modes for this command: prompt and update
 

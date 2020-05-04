@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'github_commit_status'
-copyright = u"2018, Glen Jarvis"
+copyright = u"2018-2020, Glen Jarvis Training & Consulting, LLC"
 author = u"Glen Jarvis"
 
 # The version info for the project you're documenting, acts as replacement
