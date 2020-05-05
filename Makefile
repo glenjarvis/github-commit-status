@@ -89,10 +89,10 @@ test: ## run tests quickly with the default Python
 test-all: ## Run tests in all containers
 	# TODO: Please help me learn to make this more DRY
 	docker-compose build
-	docker run --rm -it github_commit_status:latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status:py-3.5.9-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status:py-3.6.10-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status:py-3.7.7-latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it glenjarvis/github_commit_status:latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it glenjarvis/github_commit_status:py-3.5.9-latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it glenjarvis/github_commit_status:py-3.6.10-latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it glenjarvis/github_commit_status:py-3.7.7-latest /bin/bash -c 'make intra-container-test'
 
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
