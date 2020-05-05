@@ -26,6 +26,8 @@ endef
 export BROWSER_PYSCRIPT
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
+DOCKER_VERSION = latest
+
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
@@ -42,11 +44,12 @@ clean-containers: ## Remove all docker containers
 	docker container ls -a  | cut -d' ' -f 1  | grep -v CONTAINER | xargs docker container rm
 
 clean-images: ## Clean github_commit_status images
-	docker image rm github_commit_status
-	docker image rm github_commit_status_py3.5.9
-	docker image rm github_commit_status_py3.6.10
-	docker image rm github_commit_status_py3.7.7
-	#docker image ls -a | grep none| awk '{print $$3}' | xargs docker image rm
+	# Please help me learn how to DRY this up
+	docker image rm glenjarvis/github_commit_status:${DOCKER_VERSION} || true
+	docker image rm glenjarvis/github_commit_status:py-3.5.9-${DOCKER_VERSION} || true
+	docker image rm glenjarvis/github_commit_status:py-3.6.10-${DOCKER_VERSION} || true
+	docker image rm glenjarvis/github_commit_status:py-3.7.7-${DOCKER_VERSION} || true
+	docker image ls -a | grep none| awk '{print $$3}' | xargs docker image rm
 
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -69,6 +72,8 @@ intra-container-test:  ## Tests from inside our docker containers
 	poetry env list --full-path | cut -d' ' -f1 > /tmp/python_base
 	`cat /tmp/python_base`/bin/python tests/test_github_commit_status.py
 
+image: docker_setup  ## Build docker image
+
 lint: ## check style with flake8
 	flake8 github_commit_status tests
 
@@ -83,10 +88,11 @@ test: ## run tests quickly with the default Python
 
 test-all: ## Run tests in all containers
 	# TODO: Please help me learn to make this more DRY
-	docker run --rm -it github_commit_status /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status_py3.5.9 /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status_py3.6.10 /bin/bash -c 'make intra-container-test'
-	docker run --rm -it github_commit_status_py3.7.7 /bin/bash -c 'make intra-container-test'
+	docker-compose build
+	docker run --rm -it github_commit_status:latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it github_commit_status:py-3.5.9-latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it github_commit_status:py-3.6.10-latest /bin/bash -c 'make intra-container-test'
+	docker run --rm -it github_commit_status:py-3.7.7-latest /bin/bash -c 'make intra-container-test'
 
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
@@ -103,6 +109,18 @@ run: ## Build docker image and run it
 	# TODO: Please help me get past need to manually type 'poetry shell'
 	echo "At prompt ==> poetry shell"
 	docker run -it github_commit_status bash
+
+git-hook:
+	cp githooks/pre-commit  .git/hooks/
+	echo "Git hook installed."
+
+git-hooks: git-hook
+
+hook-go-away:
+	rm .git/hooks/pre-commit || true
+	echo "Git hook is gone. You can commit now."
+
+hooks-go-away: hook-go-away
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	@echo "+ $@"
