@@ -12,6 +12,8 @@ Welcome to github_commit_status's documentation!
    authors
    history
 
+   github_commit_status
+
 Indices and tables
 ==================
 * :ref:`genindex`
