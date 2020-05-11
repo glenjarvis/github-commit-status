@@ -1,5 +1,5 @@
 alabaster==0.7.12
-appdirs==1.4.3
+appdirs==1.4.4
 atomicwrites==1.4.0; sys_platform == "win32"
 attrs==19.3.0
 babel==2.8.0
