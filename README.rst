@@ -139,7 +139,7 @@ Choose **Personal access tokens**:
 Example: Prompt mode
 --------------------
 
-If you only need to use this comand line rarely, there's no need to worry about
+If you only need to use this command line rarely, there's no need to worry about
 getting the command line arguments correct - you will be prompted for any
 required arguments that are missing. This is ideal for students in my class who
 only need to update a Pull Requests a few times for a homework assignment. See
