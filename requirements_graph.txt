@@ -1,10 +1,11 @@
 click 7.1.2 Composable command line interface toolkit
 coverage 5.1 Code coverage measurement for Python
-flake8 3.7.9 the modular source code checker: pep8, pyflakes and co
-|-- entrypoints >=0.3.0,<0.4.0
+flake8 3.8.1 the modular source code checker: pep8 pyflakes and co
+|-- importlib-metadata *
+|   `-- zipp >=0.5 
 |-- mccabe >=0.6.0,<0.7.0
-|-- pycodestyle >=2.5.0,<2.6.0
-`-- pyflakes >=2.1.0,<2.2.0
+|-- pycodestyle >=2.6.0a1,<2.7.0
+`-- pyflakes >=2.2.0,<2.3.0
 poetry 1.0.5 Python dependency management and packaging made easy.
 |-- cachecontrol >=0.12.4,<0.13.0
 |   |-- lockfile >=0.9 
@@ -75,7 +76,7 @@ pygithub 1.51 Use the full Github API v3
     |-- chardet >=3.0.2,<4 
     |-- idna >=2.5,<3 
     `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-pytest 5.4.1 pytest: simple powerful testing with Python
+pytest 5.4.2 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=17.4.0
 |-- colorama *
