@@ -19,7 +19,7 @@ distlib==0.3.0
 docutils==0.16
 entrypoints==0.3
 filelock==3.0.12
-flake8==3.7.9
+flake8==3.8.0
 html5lib==1.0.1
 idna==2.9
 imagesize==1.2.0
