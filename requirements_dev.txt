@@ -44,7 +44,7 @@ pluggy==0.13.1
 poetry==1.0.5
 ptyprocess==0.6.0
 py==1.8.1
-pycodestyle==2.5.0
+pycodestyle==2.6.0
 pycparser==2.20; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
 pyflakes==2.1.1
 pygithub==1.51
