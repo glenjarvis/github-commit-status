@@ -10,7 +10,7 @@ cffi==1.14.0; python_version >= "3.5" and python_version < "4.0" and sys_platfor
 chardet==3.0.4
 cleo==0.7.6
 click==7.1.2
-clikit==0.4.3
+clikit==0.6.1
 colorama==0.4.3; sys_platform == "win32" or platform_system == "Windows"
 coverage==5.1
 cryptography==2.9.2; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
