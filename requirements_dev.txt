@@ -40,7 +40,7 @@ pathtools==0.1.2
 pexpect==4.8.0
 pkginfo==1.5.0.1
 pluggy==0.13.1
-poetry==1.0.5
+poetry==1.0.8
 ptyprocess==0.6.0
 py==1.8.1
 pycodestyle==2.6.0
