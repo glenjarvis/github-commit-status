@@ -18,7 +18,7 @@ deprecated==1.2.9
 distlib==0.3.0
 docutils==0.16
 filelock==3.0.12
-flake8==3.8.1
+flake8==3.8.3
 html5lib==1.0.1
 idna==2.9
 imagesize==1.2.0
