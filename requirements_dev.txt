@@ -62,7 +62,7 @@ secretstorage==3.1.2; python_version >= "3.5" and python_version < "4.0" and sys
 shellingham==1.3.2
 six==1.14.0
 snowballstemmer==2.0.0
-sphinx==3.0.3
+sphinx==3.1.1
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==1.0.3
