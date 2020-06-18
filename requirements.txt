@@ -5,7 +5,7 @@ deprecated==1.2.9
 idna==2.9
 pygithub==1.51
 pyjwt==1.7.1
-requests==2.23.0
+requests==2.24.0
 toml==0.10.0
 urllib3==1.25.9
 wheel==0.34.2
