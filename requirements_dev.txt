@@ -15,7 +15,7 @@ colorama==0.4.3; sys_platform == "win32" or platform_system == "Windows"
 coverage==5.1
 cryptography==2.9.2; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
 deprecated==1.2.9
-distlib==0.3.0
+distlib==0.3.1
 docutils==0.16
 filelock==3.0.12
 flake8==3.8.1
