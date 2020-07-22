@@ -7,6 +7,6 @@ pygithub==1.51
 pyjwt==1.7.1
 requests==2.23.0
 toml==0.10.0
-urllib3==1.25.9
+urllib3==1.25.10
 wheel==0.34.2
 wrapt==1.12.1
