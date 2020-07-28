@@ -225,7 +225,7 @@ Guidelines
 
 * Use a different topic branch for each topic
 * Keep commits small
-* Rebase topic branches (i.e., Don't merge master back into topic)
+* Rebase topic branches (i.e., Don't merge main back into topic)
 * `Use proper commit message <https://chris.beams.io/posts/git-commit/>`_
 
 
