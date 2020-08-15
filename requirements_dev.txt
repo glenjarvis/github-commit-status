@@ -6,7 +6,7 @@ babel==2.8.0
 cachecontrol==0.12.6
 cachy==0.3.0
 certifi==2020.4.5.1
-cffi==1.14.0; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
+cffi==1.14.2; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
 chardet==3.0.4
 cleo==0.7.6
 click==7.1.2
