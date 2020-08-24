@@ -1,12 +1,12 @@
 click 7.1.2 Composable command line interface toolkit
-coverage 5.1 Code coverage measurement for Python
-flake8 3.8.1 the modular source code checker: pep8 pyflakes and co
+coverage 5.2.1 Code coverage measurement for Python
+flake8 3.8.3 the modular source code checker: pep8 pyflakes and co
 |-- importlib-metadata *
 |   `-- zipp >=0.5 
 |-- mccabe >=0.6.0,<0.7.0
 |-- pycodestyle >=2.6.0a1,<2.7.0
 `-- pyflakes >=2.2.0,<2.3.0
-poetry 1.0.5 Python dependency management and packaging made easy.
+poetry 1.0.10 Python dependency management and packaging made easy.
 |-- cachecontrol >=0.12.4,<0.13.0
 |   |-- lockfile >=0.9 
 |   |-- msgpack >=0.5.2 
@@ -67,7 +67,7 @@ poetry 1.0.5 Python dependency management and packaging made easy.
 |       `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
 |-- shellingham >=1.1,<2.0
 `-- tomlkit >=0.5.11,<0.6.0
-pygithub 1.51 Use the full Github API v3
+pygithub 1.53 Use the full Github API v3
 |-- deprecated *
 |   `-- wrapt >=1.10,<2 
 |-- pyjwt *
@@ -76,7 +76,7 @@ pygithub 1.51 Use the full Github API v3
     |-- chardet >=3.0.2,<4 
     |-- idna >=2.5,<3 
     `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-pytest 5.4.2 pytest: simple powerful testing with Python
+pytest 5.4.3 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=17.4.0
 |-- colorama *
@@ -95,7 +95,7 @@ pytest 5.4.2 pytest: simple powerful testing with Python
 `-- wcwidth *
 rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
 `-- docutils >=0.7
-sphinx 3.0.3 Python documentation generator
+sphinx 3.2.1 Python documentation generator
 |-- alabaster >=0.7,<0.8
 |-- babel >=1.3
 |   `-- pytz >=2015.7 
@@ -121,31 +121,30 @@ sphinx 3.0.3 Python documentation generator
 |-- sphinxcontrib-jsmath *
 |-- sphinxcontrib-qthelp *
 `-- sphinxcontrib-serializinghtml *
-toml 0.10.0 Python Library for Tom's Obvious, Minimal Language
-tox 3.15.0 tox is a generic virtualenv management and test command line tool
+toml 0.10.1 Python Library for Tom's Obvious, Minimal Language
+tox 3.19.0 tox is a generic virtualenv management and test command line tool
 |-- colorama >=0.4.1
-|-- filelock >=3.0.0,<4
+|-- filelock >=3.0.0
 |-- importlib-metadata >=0.12,<2
 |   `-- zipp >=0.5 
 |-- packaging >=14
 |   |-- pyparsing >=2.0.2 
 |   `-- six * 
-|-- pluggy >=0.12.0,<1
+|-- pluggy >=0.12.0
 |   `-- importlib-metadata >=0.12 
 |       `-- zipp >=0.5 
-|-- py >=1.4.17,<2
-|-- six >=1.14.0,<2
+|-- py >=1.4.17
+|-- six >=1.14.0
 |-- toml >=0.9.4
 `-- virtualenv >=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,<20.0.3 || >20.0.3,<20.0.4 || >20.0.4,<20.0.5 || >20.0.5,<20.0.6 || >20.0.6,<20.0.7 || >20.0.7
     |-- appdirs >=1.4.3,<2 
-    |-- distlib >=0.3.0,<1 
+    |-- distlib >=0.3.1,<1 
     |-- filelock >=3.0.0,<4 
     |-- importlib-metadata >=0.12,<2 
     |   `-- zipp >=0.5 
-    |-- importlib-resources >=1.0,<2 
-    |   |-- importlib-metadata * (circular dependency aborted here)
+    |-- importlib-resources >=1.0 
     |   `-- zipp >=0.4 (circular dependency aborted here)
     `-- six >=1.9.0,<2 
-watchdog 0.10.2 Filesystem events monitoring
+watchdog 0.10.3 Filesystem events monitoring
 `-- pathtools >=0.1.1
 wheel 0.34.2 A built-package format for Python
