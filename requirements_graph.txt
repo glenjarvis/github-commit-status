@@ -148,4 +148,4 @@ tox 3.19.0 tox is a generic virtualenv management and test command line tool
     `-- six >=1.9.0,<2 
 watchdog 0.10.3 Filesystem events monitoring
 `-- pathtools >=0.1.1
-wheel 0.34.2 A built-package format for Python
+wheel 0.35.1 A built-package format for Python
