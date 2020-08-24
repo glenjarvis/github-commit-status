@@ -76,12 +76,13 @@ pygithub 1.53 Use the full Github API v3
     |-- chardet >=3.0.2,<4 
     |-- idna >=2.5,<3 
     `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-pytest 5.4.3 pytest: simple powerful testing with Python
+pytest 6.0.1 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=17.4.0
 |-- colorama *
 |-- importlib-metadata >=0.12
 |   `-- zipp >=0.5 
+|-- iniconfig *
 |-- more-itertools >=4.0.0
 |-- packaging *
 |   |-- pyparsing >=2.0.2 
@@ -91,8 +92,8 @@ pytest 5.4.3 pytest: simple powerful testing with Python
 |-- pluggy >=0.12,<1.0
 |   `-- importlib-metadata >=0.12 
 |       `-- zipp >=0.5 
-|-- py >=1.5.0
-`-- wcwidth *
+|-- py >=1.8.2
+`-- toml *
 rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
 `-- docutils >=0.7
 sphinx 3.2.1 Python documentation generator
