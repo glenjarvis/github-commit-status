@@ -78,6 +78,6 @@ urllib3==1.25.10
 virtualenv==20.0.31
 watchdog==0.10.3
 webencodings==0.5.1
-wheel==0.34.2
+wheel==0.35.1
 wrapt==1.12.1
 zipp==1.2.0; python_version >= "3.5" and python_version < "3.8" or python_version < "3.8"

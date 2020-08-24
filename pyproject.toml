@@ -15,7 +15,7 @@ keywords = ['git', 'github', 'commit', 'github_commit_status']
 
 [tool.poetry.dependencies]
 python = "^3.5 || ^3.6 || ^3.7 || ^3.8"
-wheel = "^0.34.2"
+wheel = "^0.35"
 toml = "^0.10"
 click = "^7.1.2"
 pygithub = "^1.51"
