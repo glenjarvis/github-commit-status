@@ -13,7 +13,7 @@ click==7.1.2
 clikit==0.4.3
 colorama==0.4.3; sys_platform == "win32" or platform_system == "Windows"
 coverage==5.2.1
-cryptography==3.0; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
+cryptography==3.1; python_version >= "3.5" and python_version < "4.0" and sys_platform == "linux"
 deprecated==1.2.10
 distlib==0.3.1
 docutils==0.16
@@ -32,7 +32,7 @@ keyring==20.0.1; python_version >= "3.5" and python_version < "4.0"
 lockfile==0.12.2
 markupsafe==1.1.1
 mccabe==0.6.1
-more-itertools==8.4.0
+more-itertools==8.5.0
 msgpack==1.0.0
 packaging==20.4
 pastel==0.2.0
