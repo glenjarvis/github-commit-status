@@ -123,7 +123,7 @@ sphinx 3.2.1 Python documentation generator
 |-- sphinxcontrib-qthelp *
 `-- sphinxcontrib-serializinghtml *
 toml 0.10.1 Python Library for Tom's Obvious, Minimal Language
-tox 3.19.0 tox is a generic virtualenv management and test command line tool
+tox 3.20.0 tox is a generic virtualenv management and test command line tool
 |-- colorama >=0.4.1
 |-- filelock >=3.0.0
 |-- importlib-metadata >=0.12,<2
