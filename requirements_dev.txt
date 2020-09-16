@@ -35,7 +35,7 @@ mccabe==0.6.1
 more-itertools==8.5.0
 msgpack==1.0.0
 packaging==20.4
-pastel==0.2.0
+pastel==0.2.1
 pathlib2==2.3.5; python_version < "3.6"
 pathtools==0.1.2
 pexpect==4.8.0
