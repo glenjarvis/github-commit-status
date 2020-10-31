@@ -6,7 +6,7 @@ flake8 3.8.4 the modular source code checker: pep8 pyflakes and co
 |-- mccabe >=0.6.0,<0.7.0
 |-- pycodestyle >=2.6.0a1,<2.7.0
 `-- pyflakes >=2.2.0,<2.3.0
-poetry 1.1.2 Python dependency management and packaging made easy.
+poetry 1.1.4 Python dependency management and packaging made easy.
 |-- cachecontrol >=0.12.4,<0.13.0
 |   |-- lockfile >=0.9 
 |   |-- msgpack >=0.5.2 
@@ -93,7 +93,7 @@ pygithub 1.53 Use the full Github API v3
     |-- chardet >=3.0.2,<4 
     |-- idna >=2.5,<3 
     `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-pytest 6.1.1 pytest: simple powerful testing with Python
+pytest 6.1.2 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=17.4.0
 |-- colorama *
