@@ -6,6 +6,6 @@ idna==2.10
 pygithub==1.53
 pyjwt==1.7.1
 requests==2.24.0
-toml==0.10.1
+toml==0.10.2
 urllib3==1.25.10
 wrapt==1.12.1
