@@ -76,7 +76,7 @@ toml==0.10.1
 tomlkit==0.7.0
 tox==3.20.1
 typing-extensions==3.7.4.3; python_version >= "3.5" and python_full_version < "3.5.4"
-urllib3==1.25.10
+urllib3==1.26.2
 virtualenv==20.0.33
 watchdog==0.10.3
 webencodings==0.5.1
