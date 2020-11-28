@@ -36,7 +36,7 @@ lockfile==0.12.2
 markupsafe==1.1.1
 mccabe==0.6.1
 msgpack==1.0.0
-packaging==20.4
+packaging==20.7
 pastel==0.2.1
 pathlib2==2.3.5; python_version < "3.6"
 pathtools==0.1.2
