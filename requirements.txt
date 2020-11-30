@@ -3,7 +3,7 @@ chardet==3.0.4
 click==7.1.2
 deprecated==1.2.10
 idna==2.10
-pygithub==1.53
+pygithub==1.54
 pyjwt==1.7.1
 requests==2.24.0
 toml==0.10.1
