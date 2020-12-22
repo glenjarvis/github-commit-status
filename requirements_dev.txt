@@ -31,7 +31,7 @@ iniconfig==1.0.1
 jeepney==0.4.3; sys_platform == "linux"
 jinja2==2.11.2
 keyring==21.6.0; python_version >= "3.5" and python_version < "3.6"
-keyring==21.4.0; python_version >= "3.6" and python_version < "4.0"
+keyring==21.6.0; python_version >= "3.6" and python_version < "4.0"
 lockfile==0.12.2
 markupsafe==1.1.1
 mccabe==0.6.1
