@@ -13,7 +13,7 @@ click==7.1.2
 clikit==0.6.2
 colorama==0.4.3; platform_system == "Windows"
 colorama==0.4.3; sys_platform == "win32"
-coverage==5.3
+coverage==5.4
 crashtest==0.3.1; python_version >= "3.6" and python_version < "4.0"
 cryptography==3.1.1
 deprecated==1.2.10
