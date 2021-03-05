@@ -82,4 +82,4 @@ watchdog==0.10.3
 webencodings==0.5.1
 wrapt==1.12.1
 zipp==3.4.1
-zipp==1.2.0; python_version < "3.8"
+zipp==3.4.1; python_version < "3.8"
