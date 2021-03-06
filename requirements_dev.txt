@@ -30,7 +30,7 @@ importlib-resources==3.0.0; python_version < "3.7"
 iniconfig==1.0.1
 jeepney==0.4.3; sys_platform == "linux"
 jinja2==2.11.2
-keyring==20.0.1; python_version >= "3.5" and python_version < "3.6"
+keyring==23.0.0; python_version >= "3.5" and python_version < "3.6"
 keyring==21.4.0; python_version >= "3.6" and python_version < "4.0"
 lockfile==0.12.2
 markupsafe==1.1.1
