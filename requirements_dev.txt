@@ -78,7 +78,7 @@ tox==3.20.1
 typing-extensions==3.7.4.3; python_version >= "3.5" and python_full_version < "3.5.4"
 urllib3==1.25.10
 virtualenv==20.0.33
-watchdog==0.10.3
+watchdog==2.0.3
 webencodings==0.5.1
 wrapt==1.12.1
 zipp==1.2.0
