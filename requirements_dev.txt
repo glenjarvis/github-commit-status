@@ -65,7 +65,7 @@ secretstorage==3.1.2; sys_platform == "linux"
 shellingham==1.3.2
 six==1.15.0
 snowballstemmer==2.0.0
-sphinx==3.2.1
+sphinx==4.0.3
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==1.0.3
