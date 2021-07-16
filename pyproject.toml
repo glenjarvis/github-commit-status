@@ -26,7 +26,7 @@ flake8 = "^3.7"
 tox = "^3.14"
 coverage = "^5.1"
 rstcheck = "^3.3"
-watchdog = "^0.10"
+watchdog = "^2.1"
 sphinx = "^4.1"
 
 [tool.poetry.scripts]
