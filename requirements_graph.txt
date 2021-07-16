@@ -12,47 +12,35 @@ poetry 1.1.7 Python dependency management and packaging made easy.
 |   |-- msgpack >=0.5.2 
 |   `-- requests * 
 |       |-- certifi >=2017.4.17 
-|       |-- chardet >=3.0.2,<4 
-|       |-- idna >=2.5,<3 
-|       `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
+|       |-- charset-normalizer >=2.0.0,<2.1.0 
+|       |-- idna >=2.5,<4 
+|       `-- urllib3 >=1.21.1,<1.27 
 |-- cachy >=0.3.0,<0.4.0
 |-- cleo >=0.8.1,<0.9.0
 |   `-- clikit >=0.6.0,<0.7.0 
 |       |-- crashtest >=0.3.0,<0.4.0 
 |       |-- pastel >=0.2.0,<0.3.0 
-|       |-- pylev >=1.3,<2.0 
-|       `-- typing-extensions >=3.6,<4.0 
+|       `-- pylev >=1.3,<2.0 
 |-- clikit >=0.6.2,<0.7.0
 |   |-- crashtest >=0.3.0,<0.4.0 
 |   |-- pastel >=0.2.0,<0.3.0 
-|   |-- pylev >=1.3,<2.0 
-|   `-- typing-extensions >=3.6,<4.0 
+|   `-- pylev >=1.3,<2.0 
 |-- crashtest >=0.3.0,<0.4.0
 |-- html5lib >=1.0,<2.0
 |   |-- six >=1.9 
 |   `-- webencodings * 
 |-- importlib-metadata >=1.6.0,<2.0.0
 |   `-- zipp >=0.5 
-|-- keyring >=20.0.1,<21.0.0
-|   |-- importlib-metadata * 
-|   |   `-- zipp >=0.5 
-|   |-- pywin32-ctypes <0.1.0 || >0.1.0,<0.1.1 || >0.1.1 
-|   `-- secretstorage * 
-|       |-- cryptography >=2.0 
-|       |   |-- cffi >=1.8,<1.11.3 || >1.11.3 
-|       |   |   `-- pycparser * 
-|       |   `-- six >=1.4.1 
-|       `-- jeepney >=0.4.2 
 |-- keyring >=21.2.0,<22.0.0
-|   |-- importlib-metadata * 
+|   |-- importlib-metadata >=1 
 |   |   `-- zipp >=0.5 
+|   |-- jeepney >=0.4.2 
 |   |-- pywin32-ctypes <0.1.0 || >0.1.0,<0.1.1 || >0.1.1 
-|   `-- secretstorage * 
+|   `-- secretstorage >=3.2 
 |       |-- cryptography >=2.0 
-|       |   |-- cffi >=1.8,<1.11.3 || >1.11.3 
-|       |   |   `-- pycparser * 
-|       |   `-- six >=1.4.1 
-|       `-- jeepney >=0.4.2 
+|       |   `-- cffi >=1.12 
+|       |       `-- pycparser * 
+|       `-- jeepney >=0.6 (circular dependency aborted here)
 |-- packaging >=20.4,<21.0
 |   `-- pyparsing >=2.0.2 
 |-- pexpect >=4.7.0,<5.0.0
@@ -63,15 +51,15 @@ poetry 1.1.7 Python dependency management and packaging made easy.
 |       `-- zipp >=0.5 
 |-- requests >=2.18,<3.0
 |   |-- certifi >=2017.4.17 
-|   |-- chardet >=3.0.2,<4 
-|   |-- idna >=2.5,<3 
-|   `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
+|   |-- charset-normalizer >=2.0.0,<2.1.0 
+|   |-- idna >=2.5,<4 
+|   `-- urllib3 >=1.21.1,<1.27 
 |-- requests-toolbelt >=0.9.1,<0.10.0
 |   `-- requests >=2.0.1,<3.0.0 
 |       |-- certifi >=2017.4.17 
-|       |-- chardet >=3.0.2,<4 
-|       |-- idna >=2.5,<3 
-|       `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
+|       |-- charset-normalizer >=2.0.0,<2.1.0 
+|       |-- idna >=2.5,<4 
+|       `-- urllib3 >=1.21.1,<1.27 
 |-- shellingham >=1.1,<2.0
 |-- tomlkit >=0.7.0,<1.0.0
 `-- virtualenv >=20.0.26,<21.0.0
@@ -82,60 +70,62 @@ poetry 1.1.7 Python dependency management and packaging made easy.
     |-- filelock >=3.0.0,<4 
     |-- importlib-metadata >=0.12 (circular dependency aborted here)
     |-- importlib-resources >=1.0 
-    |   `-- zipp >=0.4 (circular dependency aborted here)
+    |   `-- zipp >=3.1.0 (circular dependency aborted here)
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
-pygithub 1.54.0.1 Use the full Github API v3
+pygithub 1.55 Use the full Github API v3
 |-- deprecated *
 |   `-- wrapt >=1.10,<2 
-|-- pyjwt <2.0
-`-- requests >=2.14.0,<2.25
+|-- pyjwt >=2.0
+|-- pynacl >=1.4.0
+|   |-- cffi >=1.4.1 
+|   |   `-- pycparser * 
+|   `-- six * 
+`-- requests >=2.14.0
     |-- certifi >=2017.4.17 
-    |-- chardet >=3.0.2,<4 
-    |-- idna >=2.5,<3 
-    `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-pytest 6.1.2 pytest: simple powerful testing with Python
+    |-- charset-normalizer >=2.0.0,<2.1.0 
+    |-- idna >=2.5,<4 
+    `-- urllib3 >=1.21.1,<1.27 
+pytest 6.2.4 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
-|-- attrs >=17.4.0
+|-- attrs >=19.2.0
 |-- colorama *
 |-- importlib-metadata >=0.12
 |   `-- zipp >=0.5 
 |-- iniconfig *
 |-- packaging *
 |   `-- pyparsing >=2.0.2 
-|-- pathlib2 >=2.2.0
-|   `-- six * 
-|-- pluggy >=0.12,<1.0
+|-- pluggy >=0.12,<1.0.0a1
 |   `-- importlib-metadata >=0.12 
 |       `-- zipp >=0.5 
 |-- py >=1.8.2
 `-- toml *
 rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
 `-- docutils >=0.7
-sphinx 3.5.4 Python documentation generator
+sphinx 4.1.1 Python documentation generator
 |-- alabaster >=0.7,<0.8
 |-- babel >=1.3
 |   `-- pytz >=2015.7 
 |-- colorama >=0.3.5
-|-- docutils >=0.12,<0.17
+|-- docutils >=0.14,<0.18
 |-- imagesize *
 |-- jinja2 >=2.3
-|   `-- markupsafe >=0.23 
+|   `-- markupsafe >=2.0 
 |-- packaging *
 |   `-- pyparsing >=2.0.2 
 |-- pygments >=2.0
 |-- requests >=2.5.0
 |   |-- certifi >=2017.4.17 
-|   |-- chardet >=3.0.2,<4 
-|   |-- idna >=2.5,<3 
-|   `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
+|   |-- charset-normalizer >=2.0.0,<2.1.0 
+|   |-- idna >=2.5,<4 
+|   `-- urllib3 >=1.21.1,<1.27 
 |-- snowballstemmer >=1.1
 |-- sphinxcontrib-applehelp *
 |-- sphinxcontrib-devhelp *
-|-- sphinxcontrib-htmlhelp *
+|-- sphinxcontrib-htmlhelp >=2.0.0
 |-- sphinxcontrib-jsmath *
 |-- sphinxcontrib-qthelp *
-`-- sphinxcontrib-serializinghtml *
+`-- sphinxcontrib-serializinghtml >=1.1.5
 toml 0.10.2 Python Library for Tom's Obvious, Minimal Language
 tox 3.24.0 tox is a generic virtualenv management and test command line tool
 |-- colorama >=0.4.1
@@ -158,7 +148,7 @@ tox 3.24.0 tox is a generic virtualenv management and test command line tool
     |-- filelock >=3.0.0,<4 
     |-- importlib-metadata >=0.12 (circular dependency aborted here)
     |-- importlib-resources >=1.0 
-    |   `-- zipp >=0.4 (circular dependency aborted here)
+    |   `-- zipp >=3.1.0 (circular dependency aborted here)
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
 watchdog 0.10.4 Filesystem events monitoring
