@@ -20,7 +20,7 @@ click = "^7.1.2"
 pygithub = "^1.51"
 
 [tool.poetry.dev-dependencies]
-poetry = "^1.0.5"
+poetry = "^1.1"
 pytest = ">5"
 flake8 = "^3.7.9"
 tox = "^3.14.6"
