@@ -22,7 +22,7 @@ pygithub = "^1.51"
 [tool.poetry.dev-dependencies]
 poetry = "^1.1"
 pytest = ">5"
-flake8 = "^3.7"
+flake8 = "^3.9"
 tox = "^3.14"
 coverage = "^5.1"
 rstcheck = "^3.3"
