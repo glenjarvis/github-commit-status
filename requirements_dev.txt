@@ -47,7 +47,7 @@ pycodestyle==2.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or
 pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pyflakes==2.3.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pygithub==1.55; python_version >= "3.6"
-pygments==2.9.0; python_version >= "3.6"
+pygments==2.10.0; python_version >= "3.6"
 pyjwt==2.1.0; python_version >= "3.6"
 pylev==1.4.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pynacl==1.4.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
