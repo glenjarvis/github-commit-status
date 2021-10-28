@@ -45,7 +45,7 @@ ptyprocess==0.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or 
 py==1.10.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pycodestyle==2.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-pyflakes==2.3.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+pyflakes==2.4.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pygithub==1.55; python_version >= "3.6"
 pygments==2.10.0; python_version >= "3.6"
 pyjwt==2.3.0; python_version >= "3.6"
