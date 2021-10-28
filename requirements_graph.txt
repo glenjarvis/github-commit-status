@@ -1,11 +1,14 @@
-click 7.1.2 Composable command line interface toolkit
-coverage 5.5 Code coverage measurement for Python
-flake8 3.9.2 the modular source code checker: pep8 pyflakes and co
-|-- importlib-metadata *
+click 8.0.3 Composable command line interface toolkit
+|-- colorama *
+`-- importlib-metadata *
+    `-- zipp >=0.5 
+coverage 6.0.2 Code coverage measurement for Python
+flake8 4.0.1 the modular source code checker: pep8 pyflakes and co
+|-- importlib-metadata <4.3
 |   `-- zipp >=0.5 
 |-- mccabe >=0.6.0,<0.7.0
-|-- pycodestyle >=2.7.0,<2.8.0
-`-- pyflakes >=2.3.0,<2.4.0
+|-- pycodestyle >=2.8.0,<2.9.0
+`-- pyflakes >=2.4.0,<2.5.0
 poetry 1.1.11 Python dependency management and packaging made easy.
 |-- cachecontrol >=0.12.4,<0.13.0
 |   |-- lockfile >=0.9 
