@@ -14,7 +14,7 @@ homepage = "https://github.com/glenjarvis/github_commit_status"
 keywords = ['git', 'github', 'commit', 'github_commit_status']
 
 [tool.poetry.dependencies]
-python = ">=3.6,<4.0"
+python = ">=3.7,<4.0"
 toml = "^0.10"
 click = "^8.0"
 pygithub = "^1.51"
