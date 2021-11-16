@@ -34,6 +34,6 @@ github_commit_status = "github_commit_status.cli:cli"
 gcs = "github_commit_status.cli:cli"
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.masonry.api"
 
