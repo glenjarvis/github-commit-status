@@ -2,20 +2,4 @@ version: '3'
 services:
   github_commit_status:
     build: .
-    image: "glenjarvis/github_commit_status:${TAG}"
-  github_commit_status_py3_5_9:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.3.5.9
-    image: "glenjarvis/github_commit_status:py-3.5.9-${TAG}"
-  github_commit_status_py3_6_10:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.3.6.10
-    image: "glenjarvis/github_commit_status:py-3.6.10-${TAG}"
-  github_commit_status_py3_7_7:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.3.7.7
-    image: "glenjarvis/github_commit_status:py-3.7.7-${TAG}"
-
+    image: glenjarvis/github_commit_status
