@@ -1,0 +1,4 @@
+.git
+*.egg-info/
+venv
+docs/_build/

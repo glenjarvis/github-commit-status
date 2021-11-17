@@ -8,10 +8,11 @@ Welcome to github_commit_status's documentation!
    readme
    installation
    usage
-   modules
    contributing
    authors
    history
+
+   github_commit_status
 
 Indices and tables
 ==================

@@ -9,16 +9,38 @@ be given. These Guidelines will help you effectively contribute to this project
 and guide you to successfully merged Pull Requests.
 
 If you haven't contributed to an Open Source project before, these Guidelines
-may feel intimidating - there may be a lot of things here you hadn't heard about
-(like TDD, rebases, tox, Travis, etc.). Consider taking my online course `How to
-contribute to an Open Source Project
-<https://GlenJarvis.com/v/how-to-open-source>`_.
+may feel intimidating. Consider taking my online course `How to contribute to
+an Open Source Project <https://GlenJarvis.com/v/how-to-open-source>`_.
 
 Here's how to set up **github_commit_status** for local development.
 
 
 Getting Started!
 ----------------
+
+Docker Setup
+^^^^^^^^^^^^
+
+For a quick set-up, without having to install much:
+
+ .. code-block:: bash
+
+      cd <to the repo directory>
+      docker image fetch glenjarvis/github_commit_status:latest
+      docker run --rm -it -v $(pwd):/mnt/repo glenjarvis/github_commit_status bash
+      poetry shell
+
+In another window, you can use any text editor that you want while running
+python commands in the running docker container.
+
+I am just starting to convert to a Docker setup, so feel free to report any
+problems and/or sugestions regarding the above.
+
+
+Local Setup
+^^^^^^^^^^^
+
+For a more traditional stup:
 
 This repository is in standard wheel format so it can be used like a normal
 Python Package. However, if you follow these instructions, you can avoid having
@@ -29,33 +51,37 @@ your python environment look like this:
 If you need help with background knowledge, see online training video:
 https://GlenJarvis.com/v/virtual-environments.
 
-1. Find a place to work::
+1. Find a place to work:
 
-    $ cd path_where_you_want_this_repo
+    .. code-block:: bash
 
-2. Clone the project::
+      $ cd path_where_you_want_this_repo
 
-    $ git clone https://github.com/glenjarvis/github_commit_status.git
-    $ cd github_commit_status
+2. Clone the project:
 
-3. Make a virtualenv named **venv** for your Python environment of choice.
+    .. code-block:: bash
 
-    * For Python2::
+      $ git clone https://github.com/glenjarvis/github_commit_status.git
+      $ cd github_commit_status
 
-        $ virtualenv venv
+3. Make a virtualenv named **venv** for your Python environment of choice:
 
-    * For Python3::
+    .. code-block:: bash
 
-        $ python3 -m venv venv
+      $ python3 -m venv venv
 
 4. Activate the Virtual Enviroment. Every time you come back to work on this
-   project, you will need to activate your virtual environment::
+   project, you will need to activate your virtual environment:
 
-       $ cd path_of_this_repo
-       $ source venv/bin/activate
+    .. code-block:: bash
+
+      $ cd path_of_this_repo
+      $ source venv/bin/activate
 
    When the Virtual Environment is activated, you should see ``venv`` in the
-   prompt. It may look something  to this::
+   prompt. It may look something  to this:
+
+    .. code-block:: bash
 
        (venv) $
 
@@ -64,107 +90,72 @@ https://GlenJarvis.com/v/virtual-environments.
    So, I put something like this in my ``$HOME/.bashrc`` (or equivalent)
    file:
 
-       .. code-block:: bash
+     .. code-block:: bash
 
-           function cd_github_commit_status {
-               deactivate 2> /dev/null
-               cd /FULL_PATH_TO_THIS_DIRECTORY
-               source venv/bin/activate
-           }
+         function cd_github_commit_status {
+             deactivate 2> /dev/null
+             cd /FULL_PATH_TO_THIS_DIRECTORY
+             source venv/bin/activate
+         }
 
 5. Upgrade Pip. The Pip that comes with a new Virtual Environment is often too
-   old. Upgrade it to be sure it is current::
+   old. Upgrade it to be sure it is current:
 
-       (venv)$ pip install --upgrade pip
+       .. code-block:: bash
 
-6. Pip install as editable. This project is in wheel format. So, simply install
-   a reference in your virtual environment so that you can edit files in this
-   folder and see an immediate affect in the virtual environment::
-
-       (venv)$ pip install --editable .
-
-7. Install extra packages for development::
-
-       (venv)$  pip install -r develop_requirements.txt
-
-8. Install the Git Hooks. Copy the contents of ``githooks`` into your checked
-   out project's ``.git/hooks`` folder::
-
-       (venv)$  cp githooks/* .git/hooks
-
-   Note: ``git commit --no-verify`` bypasses Git Hooks. Please don't do that
-   unless the Git Hooks are actually broken.
-
-9. Check out a topic branch and begin working.
+         (venv)$ pip install --upgrade pip
 
 
-Linting and Style
------------------
+6. Decide if you wish to use Poetry (I recommend it).
 
-Before any pull request is submitted, please ensure that you follow this
-project's style and linting guidelines. We supply some Git Hooks to help you
-with this.
+   It will do a pretty good job of keeping the dependencies for this project
+   organized. If you use Poetry, do the following and skip to step 9.
 
-Every commit's applicable files should:
+       .. code-block:: bash
 
-* Pass `pycodestyle <https://pypi.org/project/pycodestyle/>`__ and be `PEP8
-  <https://www.python.org/dev/peps/pep-0008/>`_ compliant.
-
-* Pass default `PyLint <https://pypi.org/project/pylint/>`__ with score of 9.0
-  or above (preferrably 10.0).
-
-  If there is something that `PyLint <https://pypi.org/project/pylint/>`__ has
-  gotten wrong (not that uncommon), make it clear to both the readers of your
-  your code and to `PyLint <https://pypi.org/project/pylint/>`__ that your
-  choice was intentional.
-
-  For example, in a Python based Git Hook referenced below,
-  `PyLint <https://pypi.org/project/pylint/>`__ gave a warning that the
-  `pre-commit` filename is not a valid Python module name.
-
-  `PyLint <https://pypi.org/project/pylint/>`__ is correct - we wouldn't
-  normally want to name our Python program files ``pre-commit``. In a normal
-  circumstance, we would want to name the program file ``precommit.py`` or
-  something even more intuitive.
-
-  However, having an executable script with the name of ``pre-commit`` is a
-  dependency of the Git Hook and can't be avoided. Thus, to communicate this to
-  both the reader of the program and `PyLint
-  <https://pypi.org/project/pylint/>`__, I made these two comments toward the
-  top where it was signficant::
-
-    # "pre-commit" filename name is a hard Git dependency
-    # pylint: disable=invalid-name
-
-  The top line explains to a human reader why we are placing this comment. And,
-  the second line explains to `PyLint <https://pypi.org/project/pylint/>`__ that
-  this warning can be surpressed (and not lower your score).
-
-  Thus, a `PyLint <https://pypi.org/project/pylint/>`__ score of 10.0 (the
-  highest) should be possible. Both lines should be as clear and readable to a
-  human as possible.
+         (venv)$ pip install poetry
+         (venv)$ poetry install
 
 
-Git Hooks
-^^^^^^^^^
+7. If you didn't do Poetry above, go ahead and install the project as normal:
 
-To enforce style and linting consistency in the project, a Git Hook has been
-provided to catch style and lint issues at each commit. Installation is
-described above.
+   This project is in wheel format. So, simply install a reference in your
+   virtual environment so that you can edit files in this folder and see an
+   immediate affect in the virtual environment::
 
-The ``pre-commit`` hook gives errors and stops the commit if:
+       (venv)$ pip install .
 
-- There are **any** ``pycodestyle`` violations.
-- PyLint score drops below 9.0.
+8. Install extra packages for development::
 
-As with any automation, we should have a choice. The automation should help us
-enforce a good coding style and not get in our way. If this Git Hook ever get in
-your way, you can bypass it by using the ``--no-verify`` option (e.g., ``git
-commit --no-verify``).
+       (venv)$  pip install -r requirements_dev.txt
 
-If this does happen, please email me at glen@glenjarvis.com with as much
-relevant informaton that you can. I will want to get that fixed as quickly as I
-can.
+9. (optional) Install the Git Hooks. Git Hooks are a way of running code
+   locally against your commits before you make them. Often this can catch
+   errors before they are pushed to GitHub.
+
+   To install the GitHook:
+
+       .. code-block:: bash
+
+         $ make git-hook
+
+   If you are having a difficult time making the commit and want to over-ride
+   the behavior in the hook ("Just do it anyway"), you can do this:
+
+       .. code-block:: bash
+
+         $ git commit --no-verify
+
+   If it is getting in your way and you want to remove it (you can always put
+   it back), do this:
+
+       .. code-block:: bash
+
+         $ make hooks-go-away
+
+
+10. Check out a topic branch and begin working.
+
 
 
 Extra Code Style
@@ -173,15 +164,17 @@ Extra Code Style
 * Functions and methods should be as short as possible, breaking concepts into
   smaller functions/methods whenever possible.
 
-* The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy.
-  Either run `tox` locally, or check
-  https://travis-ci.org/glenjarvis/github_commit_status/pull_requests
-  and make sure that the tests pass for all supported Python versions::
+* The pull request should work for Python 3.5, 3.6, 3.7, 3.8, and for PyPy.
+  When you push to GitHub, we will check this for you. If you want to test it
+  yourself, either run `tox` locally, or check
+  https://travis-ci.org/glenjarvis/github_commit_status/pull_requests and make
+  sure that the tests pass for all supported Python versions::
 
       $ tox
 
+* Follow the Zen
 
-* Follow the Zen::
+  .. code-block:: text
 
     The Zen of Python, by Tim Peters
 
@@ -206,34 +199,19 @@ Extra Code Style
     Namespaces are one honking great idea -- let's do more of those!
 
 
-Testing Guidelines
-------------------
-
-Whenever possible, you should use Test Drive Development (TDD). If you are
-unfamiliar with this code design and testing concept, here is an `introductory
-video <https://www.youtube.com/watch?v=sNgmSiesOG0>`__.
-
-At the very least, all code submitted should have test coverage.
-
-
 Tips and Tricks
 ^^^^^^^^^^^^^^^
 
 * TravisCI will run tests against your pull requests and catch test errors:
   https://travis-ci.org/glenjarvis/github_commit_status/pull_requests
 
-* The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy.
+* The pull request should work for Python 3.5, 3.6, 3.7, 3.8 and for PyPy.
   Running ``tox`` locally will help catch errors across versions of Python
   and make sure that the tests pass for all supported Python versions::
 
       $ tox
 
-
-Commit Guidelines
------------------
-
-All commits should follow `the seven rules of a great Git commit
-<https://chris.beams.io/posts/git-commit/>`_
+* Commits should follow `the seven rules of a great Git commit <https://chris.beams.io/posts/git-commit/>`_
 
 
 Pull Request Guidelines
@@ -242,39 +220,12 @@ Pull Request Guidelines
 Please keep a good Git hygiene in your contribution. Not everyone knows how to
 use a Source Control Management system like Git properly. We're here to help.
 
-Git Training
-^^^^^^^^^^^^
-
-I teach classes in this subject and I want to help you. I am currently making
-two courses:
-
-*  Coursera course in collaboration with a UC College campus. If the current
-   date is after 31-Aug, 2018 and you still see this sentence, would you please
-   send me an email at glen@glenjarvis.com to remind me to place the
-   Coursera link here in these Guidelines.
-
-*  An OnLine course "How to Contribute to Open Source Projects" at
-   https://GlenJarvis.com/v/how-to-open-source. This course isn't yet
-   finished. Email glen@glenjarvis.com for an early adoptor invitation.
-
-If you don't understand all of the following, you should take one of these
-courses:
-
-* The **HEAD** pointer
-* The **refs** branch pointers
-* The **objects** database (where everything is stored)
-* How to fork
-* How to push
-* How to commit
-* How to rebase
-
-
 Guidelines
 ^^^^^^^^^^
 
 * Use a different topic branch for each topic
 * Keep commits small
-* Rebase topic branches (i.e., Don't merge master back into topic)
+* Rebase topic branches (i.e., Don't merge main back into topic)
 * `Use proper commit message <https://chris.beams.io/posts/git-commit/>`_
 
 
@@ -291,11 +242,4 @@ To make clear what is expected, all communication around this project by all
 contributing members (including Glen Jarvis) are required to conform to the
 `Python Packaging Authority Code of Conduct
 <https://www.pypa.io/en/latest/code-of-conduct/>`__.
-
-
-Credits
--------
-
-This package was created with `Cookiecutter
-<https://github.com/glenjarvis/github_commit_status/blob/master/COOKIECUTTER_CREDIT>`_
 

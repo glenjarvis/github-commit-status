@@ -117,3 +117,6 @@ class TestGithub_commit_status(unittest.TestCase):
         result = self.runner.invoke(cli.cli, args_opts)
         self.assertTrue('commit should be hexadecimal' in
                         result.output)
+
+if __name__ == '__main__':
+    unittest.main()

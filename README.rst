@@ -7,29 +7,18 @@ A simple command line for updating a commit's status in GitHub
 Project and Build Status
 ------------------------
 
-.. image:: https://travis-ci.org/glenjarvis/github_commit_status.svg?branch=master
-     :target: https://travis-ci.org/glenjarvis/github_commit_status
-     :alt: Travis tests
-
-.. image:: https://pyup.io/repos/github/glenjarvis/github_commit_status/shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/github_commit_status/
-     :alt: Updates
-
-.. image:: https://pyup.io/repos/github/glenjarvis/github_commit_status/python-3-shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/github_commit_status/
-     :alt: Python 3
+.. image:: https://circleci.com/gh/glenjarvis/github-commit-status.svg?style=shield
+     :target: https://circle-ci.com/gh/glenjarvis/github_commit_status.svg
+     :alt: CircleCI build status
 
 .. image:: https://readthedocs.org/projects/github_commit_status/badge/?version=latest
      :target: http://github_commit_status.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/glenjarvis/github_commit_status?branch=master&svg=true
-     :target: https://ci.appveyor.com/project/glenjarvis/github_commit_status/branch/master
-     :alt: Windows build status on Appveyor
 
 * `GitHub repo <https://github.com/glenjarvis/github_commit_status/>`_
 * `Online Documentation <https://github-commit-status.readthedocs.io/en/latest/readme.html>`_
-* `Free Software <https://github.com/glenjarvis/github_commit_status/blob/master/LICENSE>`_
+* `Free Software <https://github.com/glenjarvis/github_commit_status/blob/main/LICENSE>`_
 
 
 How to Use
@@ -43,13 +32,15 @@ This is a great way to check for things such as white space, coding standards,
 etc. Continuous Integration tools, like Travis, use this to update the status
 of the commit that you see in Pull Requests in GitHub.
 
-`Pull Request Example <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_1_background.png>`_
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_1_background.png?raw=true
+     :alt: Figure 1 Pull Request Example
 
 This is a fairly simple integration and you can also place your own checks here.
 In the following example, I made the status pending with a yellow circle with
 the phrase "You know you can change this, right?"
 
-`Custom Status Example <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_2_custom_status.png>`_
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_2_custom_status.png?raw=true
+     :alt: Custom Status Example
 
 This command line tool will allow you to update the status of any commit that
 you have access to in GitHub. It was built to be a teaching tool for a course
@@ -65,18 +56,14 @@ To update the status of a commit in a Pull Request, you will need to provide
 some basic information:
 
 1. The name of the GitHub repository which has your Pull Request
-
 2. The commit SHA that is to be updated (e.g., the last commit  in a pull
    request)
-
 3. The desired status of the commit:
     - "success" (GitHub displays a green checkmark)
     - "pending" (GitHub displays a yellow circle)
     - "error" or "failure" (GitHub displays a red 'X')
-
 4. Description (e.g., "You know you can change this, right?" was the description
    used in the example above)
-
 5. Authorization token. This will allow the command to act like you.
    Instructions on how to create this token follow.
 
@@ -103,7 +90,8 @@ In the upper right hand corner, you will see your avatar photo (or a default
 avatar image). When you click the avatar, there will be a drop down menu with
 menu options. Choose the **Settings** option.
 
-`Upper Right Hand Corner Menu <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_3_account_settings.png>`_
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_3_account_settings.png?raw=true
+     :alt: Upper Right Hand Corner Menu 
 
 
 Developer Settings
@@ -113,7 +101,8 @@ On the next page that is loaded, the Profile settings page, you will see another
 menu to the left. It is a longer menu where the bottom looks similar to the
 following. Choose **Developer settings**:
 
-`Developer Settings Menu <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_4_developer_settings.png>`_
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_4_developer_settings.png?raw=true
+     :alt: Developer Settings Menu
 
 
 Create a Personal Access Token
@@ -121,7 +110,8 @@ Create a Personal Access Token
 On the next page, the Developer Settings page, you will see one final menu.
 Choose **Personal access tokens**:
 
-`Personal Access Token Menu <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_5_personal_accesstokens.png>`_
+.. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_5_personal_accesstokens.png?raw=true
+     :alt: Personal Access Token Menu
 
 
 1. Press the button to **Generate new token**.
@@ -133,7 +123,8 @@ Choose **Personal access tokens**:
    update your GitHub account. So, keep the scope of this token so that it can
    **only** update or access the commit status.
 
-   `New Token Screenshot <https://github.com/glenjarvis/github_commit_status/blob/master/docs/imgs/figure_6_generate_personal_access_tokens.png>`_
+   .. image:: https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_6_generate_personal_access_tokens.png?raw=true
+       :alt: New Token Screenshot
 
 4. Scroll to the bottom of click the green **Generate token** button.
 
@@ -148,7 +139,7 @@ Choose **Personal access tokens**:
 Example: Prompt mode
 --------------------
 
-If you only need to use this comand line rarely, there's no need to worry about
+If you only need to use this command line rarely, there's no need to worry about
 getting the command line arguments correct - you will be prompted for any
 required arguments that are missing. This is ideal for students in my class who
 only need to update a Pull Requests a few times for a homework assignment. See
@@ -242,5 +233,4 @@ You can contribute in many ways:
 To maximize the chance that your hard work gets merged, we have these guidelines
 to guide you along the way to a successfully merged Pull Request:
 
-* :ref:`contribution_link`
-* https://github.com/glenjarvis/github_commit_status/blob/master/CONTRIBUTING.rst
+* `Contributing <https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.rst>`__
