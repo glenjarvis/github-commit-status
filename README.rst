@@ -233,5 +233,4 @@ You can contribute in many ways:
 To maximize the chance that your hard work gets merged, we have these guidelines
 to guide you along the way to a successfully merged Pull Request:
 
-* :ref:`contribution_link`
-* https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.rst
+* `Contributing <https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.rst>`__
