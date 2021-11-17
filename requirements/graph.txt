@@ -72,8 +72,6 @@ poetry 1.1.11 Python dependency management and packaging made easy.
     |-- distlib >=0.3.1,<1 
     |-- filelock >=3.2,<4 
     |-- importlib-metadata >=0.12 (circular dependency aborted here)
-    |-- importlib-resources >=1.0 
-    |   `-- zipp >=3.1.0 (circular dependency aborted here)
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
 pygithub 1.55 Use the full Github API v3
@@ -150,8 +148,6 @@ tox 3.24.4 tox is a generic virtualenv management and test command line tool
     |-- distlib >=0.3.1,<1 
     |-- filelock >=3.2,<4 
     |-- importlib-metadata >=0.12 (circular dependency aborted here)
-    |-- importlib-resources >=1.0 
-    |   `-- zipp >=3.1.0 (circular dependency aborted here)
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
 watchdog 2.1.6 Filesystem events monitoring

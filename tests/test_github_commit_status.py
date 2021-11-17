@@ -119,4 +119,4 @@ class TestGithub_commit_status(unittest.TestCase):
                         result.output)
 
 if __name__ == '__main__':
-        unittest.main()
+    unittest.main()
