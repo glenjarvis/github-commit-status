@@ -79,9 +79,9 @@ lint: ## check style with flake8
 
 reqs: ## Update all requirements
 	poetry update
-	poetry export --without-hashes -f requirements.txt -o requirements.txt
-	poetry export --without-hashes --dev -f requirements.txt -o requirements_dev.txt
-	poetry show --tree > requirements_graph.txt
+	poetry export --without-hashes -f requirements.txt -o requirements/requirements.txt
+	poetry export --without-hashes --dev -f requirements.txt -o requirements/development.txt
+	poetry show --tree > requirements/graph.txt
 
 test: ## run tests quickly with the default Python
 	python tests/test_github_commit_status.py
