@@ -12,7 +12,6 @@ github\_commit\_status.cli module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 
