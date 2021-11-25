@@ -27,7 +27,7 @@ importlib-metadata==1.7.0; python_version >= "3.6" and python_full_version < "3.
 iniconfig==1.1.1; python_version >= "3.6"
 jeepney==0.7.1; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 jinja2==3.0.3; python_version >= "3.6"
-keyring==21.8.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
+keyring==23.3.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
 lockfile==0.12.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 markupsafe==2.0.1; python_version >= "3.6"
 mccabe==0.6.1; python_version >= "3.6"
