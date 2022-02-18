@@ -9,7 +9,7 @@ certifi==2021.10.8; python_version >= "3.6" and python_full_version < "3.0.0" or
 cffi==1.15.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux" or python_full_version >= "3.4.0" and python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 charset-normalizer==2.0.7; python_full_version >= "3.6.0" and python_version >= "3.6"
 cleo==0.8.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-click==8.0.3; python_version >= "3.6"
+click==8.0.4; python_version >= "3.6"
 clikit==0.6.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and platform_system == "Windows" and sys_platform == "win32" or platform_system == "Windows" and python_version >= "3.6" and python_full_version >= "3.5.0" and sys_platform == "win32"
 coverage==6.1.2; python_version >= "3.6"
