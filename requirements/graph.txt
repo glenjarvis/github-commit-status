@@ -1,16 +1,16 @@
-click 8.0.3 Composable command line interface toolkit
+click 8.1.3 Composable command line interface toolkit
 |-- colorama *
 `-- importlib-metadata *
     `-- zipp >=0.5 
-coverage 6.1.2 Code coverage measurement for Python
+coverage 6.4 Code coverage measurement for Python
 flake8 4.0.1 the modular source code checker: pep8 pyflakes and co
 |-- importlib-metadata <4.3
 |   `-- zipp >=0.5 
 |-- mccabe >=0.6.0,<0.7.0
 |-- pycodestyle >=2.8.0,<2.9.0
 `-- pyflakes >=2.4.0,<2.5.0
-poetry 1.1.11 Python dependency management and packaging made easy.
-|-- cachecontrol >=0.12.4,<0.13.0
+poetry 1.1.13 Python dependency management and packaging made easy.
+|-- cachecontrol >=0.12.9,<0.13.0
 |   |-- lockfile >=0.9 
 |   |-- msgpack >=0.5.2 
 |   `-- requests * 
@@ -34,7 +34,7 @@ poetry 1.1.11 Python dependency management and packaging made easy.
 |   `-- webencodings * 
 |-- importlib-metadata >=1.6.0,<2.0.0
 |   `-- zipp >=0.5 
-|-- keyring >=21.2.0,<22.0.0
+|-- keyring >=21.2.0
 |   |-- importlib-metadata >=1 
 |   |   `-- zipp >=0.5 
 |   |-- jeepney >=0.4.2 
@@ -66,12 +66,10 @@ poetry 1.1.11 Python dependency management and packaging made easy.
 |-- shellingham >=1.1,<2.0
 |-- tomlkit >=0.7.0,<1.0.0
 `-- virtualenv >=20.0.26,<21.0.0
-    |-- backports.entry-points-selectable >=1.0.4 
-    |   `-- importlib-metadata * 
-    |       `-- zipp >=0.5 
     |-- distlib >=0.3.1,<1 
     |-- filelock >=3.2,<4 
-    |-- importlib-metadata >=0.12 (circular dependency aborted here)
+    |-- importlib-metadata >=0.12 
+    |   `-- zipp >=0.5 
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
 pygithub 1.55 Use the full Github API v3
@@ -79,15 +77,14 @@ pygithub 1.55 Use the full Github API v3
 |   `-- wrapt >=1.10,<2 
 |-- pyjwt >=2.0
 |-- pynacl >=1.4.0
-|   |-- cffi >=1.4.1 
-|   |   `-- pycparser * 
-|   `-- six * 
+|   `-- cffi >=1.4.1 
+|       `-- pycparser * 
 `-- requests >=2.14.0
     |-- certifi >=2017.4.17 
     |-- charset-normalizer >=2.0.0,<2.1.0 
     |-- idna >=2.5,<4 
     `-- urllib3 >=1.21.1,<1.27 
-pytest 6.2.5 pytest: simple powerful testing with Python
+pytest 7.1.2 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=19.2.0
 |-- colorama *
@@ -100,10 +97,10 @@ pytest 6.2.5 pytest: simple powerful testing with Python
 |   `-- importlib-metadata >=0.12 
 |       `-- zipp >=0.5 
 |-- py >=1.8.2
-`-- toml *
-rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
+`-- tomli >=1.0.0
+rstcheck 3.5.0 Checks syntax of reStructuredText and code blocks nested within it
 `-- docutils >=0.7
-sphinx 4.3.0 Python documentation generator
+sphinx 4.3.2 Python documentation generator
 |-- alabaster >=0.7,<0.8
 |-- babel >=1.3
 |   `-- pytz >=2015.7 
@@ -128,7 +125,7 @@ sphinx 4.3.0 Python documentation generator
 |-- sphinxcontrib-qthelp *
 `-- sphinxcontrib-serializinghtml >=1.1.5
 toml 0.10.2 Python Library for Tom's Obvious, Minimal Language
-tox 3.24.4 tox is a generic virtualenv management and test command line tool
+tox 3.25.0 tox is a generic virtualenv management and test command line tool
 |-- colorama >=0.4.1
 |-- filelock >=3.0.0
 |-- importlib-metadata >=0.12
@@ -142,12 +139,10 @@ tox 3.24.4 tox is a generic virtualenv management and test command line tool
 |-- six >=1.14.0
 |-- toml >=0.9.4
 `-- virtualenv >=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,<20.0.3 || >20.0.3,<20.0.4 || >20.0.4,<20.0.5 || >20.0.5,<20.0.6 || >20.0.6,<20.0.7 || >20.0.7
-    |-- backports.entry-points-selectable >=1.0.4 
-    |   `-- importlib-metadata * 
-    |       `-- zipp >=0.5 
     |-- distlib >=0.3.1,<1 
     |-- filelock >=3.2,<4 
-    |-- importlib-metadata >=0.12 (circular dependency aborted here)
+    |-- importlib-metadata >=0.12 
+    |   `-- zipp >=0.5 
     |-- platformdirs >=2,<3 
     `-- six >=1.9.0,<2 
-watchdog 2.1.6 Filesystem events monitoring
+watchdog 2.1.8 Filesystem events monitoring
