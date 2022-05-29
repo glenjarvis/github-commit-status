@@ -60,7 +60,7 @@ secretstorage==3.3.2; python_version >= "3.6" and python_version < "4.0" and (py
 shellingham==1.4.0; python_version >= "2.7" and python_version < "3.0" and python_full_version < "3.0.0" or python_version >= "2.6" and python_version < "3.0" and python_full_version >= "3.5.0" or python_version > "3.0" and python_version < "3.1" and python_full_version < "3.0.0" or python_version > "3.0" and python_version < "3.1" and python_full_version >= "3.5.0" or python_version > "3.1" and python_version < "3.2" and python_full_version < "3.0.0" or python_version > "3.1" and python_version < "3.2" and python_full_version >= "3.5.0" or python_version > "3.2" and python_version < "3.3" and python_full_version < "3.0.0" or python_version > "3.2" and python_version < "3.3" and python_full_version >= "3.5.0" or python_version > "3.3" and python_full_version < "3.0.0" or python_version > "3.3" and python_full_version >= "3.5.0"
 six==1.16.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 snowballstemmer==2.2.0; python_version >= "3.6"
-sphinx==4.3.2; python_version >= "3.6"
+sphinx==5.0.0; python_version >= "3.6"
 sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-htmlhelp==2.0.0; python_version >= "3.6"
