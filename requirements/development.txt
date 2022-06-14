@@ -1,7 +1,7 @@
 alabaster==0.7.12; python_version >= "3.6"
 atomicwrites==1.4.0; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.4.0"
 attrs==21.4.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7"
-babel==2.10.1; python_version >= "3.6"
+babel==2.10.2; python_version >= "3.6"
 cachecontrol==0.12.11; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
 cachy==0.3.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 certifi==2022.5.18.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
