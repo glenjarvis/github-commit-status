@@ -38,7 +38,7 @@ pkginfo==1.8.2; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 platformdirs==2.5.2; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7"
 pluggy==1.0.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7"
 poetry-core==1.0.8; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-poetry==1.1.13; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+poetry==1.1.14; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 ptyprocess==0.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 py==1.11.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7"
 pycodestyle==2.8.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
