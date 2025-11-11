@@ -5,7 +5,7 @@ useful demo when teaching a course on Git/GitHub.
 
 ## Project and Build Status
 
-[![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/)](https://github-commit-status.readthedocs.io/en/stable/)
+[![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/)](https://github-commit-status.readthedocs.io/en/stable/) [![Tests](https://github.com/glenjarvis/github-commit-status/actions/workflows/tests.yml/badge.svg)](https://github.com/glenjarvis/github-commit-status/actions/workflows/tests.yml)
 
 ---
 ### Alert: PEP 517 and the --no-use-pep517 Flag
