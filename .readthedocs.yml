@@ -13,8 +13,7 @@ build:
 
 python:
   install:
-    - method: poetry
-      path: .
+    - requirements: requirements/development.txt
 
 mkdocs:
   configuration: mkdocs.yml
