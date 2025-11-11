@@ -74,14 +74,14 @@ intra-container-test:  ## Tests from inside our docker containers
 
 image: docker_setup  ## Build docker image
 
-lint: ## check style with flake8
-	flake8 github_commit_status tests
+lint: ## check style with pylint and black
+	pylint github_commit_status tests
+	black --check github_commit_status tests
 
-reqs: ## Update all requirements
-	poetry update
-	poetry export --without-hashes -f requirements.txt -o requirements/requirements.txt
-	poetry export --without-hashes --with dev -f requirements.txt -o requirements/development.txt
-	poetry show --tree > requirements/graph.txt
+reqs: ## Update all requirements with pip-compile
+	pip-compile --upgrade pyproject.toml -o requirements/requirements.txt
+	pip-compile --upgrade pyproject.toml --extra dev -o requirements/development.txt
+	pip list --format=freeze > requirements/freeze.txt
 
 test: ## run tests quickly with the default Python
 	python tests/test_github_commit_status.py

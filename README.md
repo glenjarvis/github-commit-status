@@ -1,10 +1,49 @@
 # github_commit_status
 
-A simple command line for updating a commit's status in GitHub
+A simple command line for updating a commit's status in GitHub. This can be a
+useful demo when teaching a course on Git/GitHub.
 
 ## Project and Build Status
 
 [![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/)](https://github-commit-status.readthedocs.io/en/stable/)
+
+---
+### Alert: PEP 517 and the --no-use-pep517 Flag
+
+**Temporarily**, please use pip versions less than 25.3 (`pip install
+"pip<25.3"`). Issue comes from external library `pip-tools`. Details:
+
+[PEP 517](https://peps.python.org/pep-0517/) is the standard specification for
+how Python packages are built. Historically, pip included a `--no-use-pep517`
+flag that bypassed this standard and used the older setuptools-based build
+method directly.
+
+`pip-tools` (the tool we use to lock dependencies) internally calls pip with the
+`--no-use-pep517` flag by default. This was an implementation detail of how
+`pip-tools` compiled dependency trees.
+
+In `pip 25.3` (released November 2025), pip removed the `--no-use-pep517` flag
+entirely.  Since [PEP 517](https://peps.python.org/pep-0517/) is now finalized
+and the standard, `pip` no longer provides an escape hatch to avoid it. This is
+the correct behavior -- pip now requires all packages to be [PEP
+517](https://peps.python.org/pep-0517/) compliant.
+
+However, `pip-tools 7.5.1` (the latest version) still tries to use this removed flag,
+causing an `TypeError: RequirementCommand.make_resolver() got an unexpected
+keyword argument 'use_pep517'`.
+
+#### Temporary Workaround
+
+Until `pip-tools` is patched to work with `pip 25.3+`, we are constraining
+`pip` to version <25.3 by running:
+
+```
+pip install "pip<25.3"
+```
+
+This is temporary. Once `pip-tools` releases a [fixed
+version](https://github.com/jazzband/pip-tools/issues/2252), this constraint
+can be removed.
 
 - [GitHub repo](https://github.com/glenjarvis/github_commit_status/)
 - [Online
