@@ -1,14 +1,16 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     build-essential \
     git \
     libffi-dev \
+    bash-completion \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
-ARG USERNAME=vscode
+ARG USERNAME=user
 ARG USER_UID=1000
 ARG USER_GID=1000
 
@@ -19,10 +21,8 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 USER $USERNAME
 WORKDIR /workspace
 
-# Install Poetry as vscode user
-ENV POETRY_VERSION=1.8.2
-RUN curl -sSL https://install.python-poetry.org | python3 - && \
-    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-
+# Set PATH for pip packages (needed before postCreateCommand runs)
 ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
+# Enable bash completion
+RUN echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >> ~/.bashrc

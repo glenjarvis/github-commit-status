@@ -11,15 +11,23 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.terminal.activateEnvironment": true
+        "python.terminal.activateEnvironment": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "args": ["-l"]
+          }
+        }
       }
     }
   },
-  "postCreateCommand": "poetry install",
+  "postCreateCommand": "pip install \"pip<25.3\" && pip install -e \".[dev]\"",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "remoteUser": "vscode"
+  "remoteUser": "user",
+  "forwardPorts": []
 }
 
