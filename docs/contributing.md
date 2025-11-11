@@ -91,12 +91,15 @@ If you need help with background knowledge, see online training video:
     > }
     > ```
 
-5.  Upgrade Pip. The Pip that comes with a new Virtual Environment is
-    often too old. Upgrade it to be sure it is current:
+5.  Ensure you have a versin of pip less than version 25.3 (until a pip-tools
+    bug is fixed):
 
     > ``` bash
-    > (venv)$ pip install --upgrade pip
+    > (venv)$ pip install "pip<25.3"
     > ```
+
+   (See [Project Documentation](https://github-commit-status.readthedocs.io/en/stable/) for
+   an explanation of the pip version constraint.)
 
 6.  Install the project with development dependencies using Hatch:
 

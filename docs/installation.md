@@ -34,16 +34,16 @@ Or download the
 $ curl  -OL https://github.com/glenjarvis/github_commit_status/tarball/main
 ```
 
-Once you have a copy of the source, you can install it with Poetry:
-
-First, install Poetry if you haven't already:
+Once you have a copy of the source, you can install it with:
 
 ``` console
-$ pip install poetry
+$ pip install -e ".[dev]"
 ```
 
-Then install the project:
+This command installs the project in editable mode with development dependencies.
+
+Alternatively, for locked dependency versions:
 
 ``` console
-$ poetry install
+$ pip install -r requirements/development.txt
 ```
