@@ -5,6 +5,130 @@ flake8 4.0.1 the modular source code checker: pep8 pyflakes and co
 ├── mccabe >=0.6.0,<0.7.0
 ├── pycodestyle >=2.8.0,<2.9.0
 └── pyflakes >=2.4.0,<2.5.0
+mkdocs 1.6.1 Project documentation with Markdown.
+├── click >=7.0
+│   └── colorama * 
+├── colorama >=0.4
+├── ghp-import >=1.0
+│   └── python-dateutil >=2.8.1 
+│       └── six >=1.5 
+├── jinja2 >=2.11.1
+│   └── markupsafe >=2.0 
+├── markdown >=3.3.6
+├── markupsafe >=2.0.1
+├── mergedeep >=1.3.4
+├── mkdocs-get-deps >=0.2.0
+│   ├── mergedeep >=1.3.4 
+│   ├── platformdirs >=2.2.0 
+│   └── pyyaml >=5.1 
+├── packaging >=20.5
+├── pathspec >=0.11.1
+├── pyyaml >=5.1
+├── pyyaml-env-tag >=0.1
+│   └── pyyaml * 
+└── watchdog >=2.0
+mkdocs-material 9.6.23 Documentation that simply works
+├── babel >=2.10,<3.0
+├── backrefs >=5.7.post1,<6.0
+├── colorama >=0.4,<1.0
+├── jinja2 >=3.1,<4.0
+│   └── markupsafe >=2.0 
+├── markdown >=3.2,<4.0
+├── mkdocs >=1.6,<2.0
+│   ├── click >=7.0 
+│   │   └── colorama * 
+│   ├── colorama >=0.4 (circular dependency aborted here)
+│   ├── ghp-import >=1.0 
+│   │   └── python-dateutil >=2.8.1 
+│   │       └── six >=1.5 
+│   ├── jinja2 >=2.11.1 
+│   │   └── markupsafe >=2.0 
+│   ├── markdown >=3.3.6 
+│   ├── markupsafe >=2.0.1 (circular dependency aborted here)
+│   ├── mergedeep >=1.3.4 
+│   ├── mkdocs-get-deps >=0.2.0 
+│   │   ├── mergedeep >=1.3.4 (circular dependency aborted here)
+│   │   ├── platformdirs >=2.2.0 
+│   │   └── pyyaml >=5.1 
+│   ├── packaging >=20.5 
+│   ├── pathspec >=0.11.1 
+│   ├── pyyaml >=5.1 (circular dependency aborted here)
+│   ├── pyyaml-env-tag >=0.1 
+│   │   └── pyyaml * (circular dependency aborted here)
+│   └── watchdog >=2.0 
+├── mkdocs-material-extensions >=1.3,<2.0
+├── paginate >=0.5,<1.0
+├── pygments >=2.16,<3.0
+├── pymdown-extensions >=10.2,<11.0
+│   ├── markdown >=3.6 
+│   └── pyyaml * 
+└── requests >=2.26,<3.0
+    ├── certifi >=2017.4.17 
+    ├── charset-normalizer >=2,<4 
+    ├── idna >=2.5,<4 
+    └── urllib3 >=1.21.1,<3 
+mkdocstrings-python 1.19.0 A Python handler for mkdocstrings.
+├── griffe >=1.13
+│   └── colorama >=0.4 
+├── mkdocs-autorefs >=1.4
+│   ├── markdown >=3.3 
+│   ├── markupsafe >=2.0.1 
+│   └── mkdocs >=1.1 
+│       ├── click >=7.0 
+│       │   └── colorama * 
+│       ├── colorama >=0.4 (circular dependency aborted here)
+│       ├── ghp-import >=1.0 
+│       │   └── python-dateutil >=2.8.1 
+│       │       └── six >=1.5 
+│       ├── jinja2 >=2.11.1 
+│       │   └── markupsafe >=2.0 (circular dependency aborted here)
+│       ├── markdown >=3.3.6 (circular dependency aborted here)
+│       ├── markupsafe >=2.0.1 (circular dependency aborted here)
+│       ├── mergedeep >=1.3.4 
+│       ├── mkdocs-get-deps >=0.2.0 
+│       │   ├── mergedeep >=1.3.4 (circular dependency aborted here)
+│       │   ├── platformdirs >=2.2.0 
+│       │   └── pyyaml >=5.1 
+│       ├── packaging >=20.5 
+│       ├── pathspec >=0.11.1 
+│       ├── pyyaml >=5.1 (circular dependency aborted here)
+│       ├── pyyaml-env-tag >=0.1 
+│       │   └── pyyaml * (circular dependency aborted here)
+│       └── watchdog >=2.0 
+├── mkdocstrings >=0.30
+│   ├── jinja2 >=2.11.1 
+│   │   └── markupsafe >=2.0 
+│   ├── markdown >=3.6 
+│   ├── markupsafe >=1.1 (circular dependency aborted here)
+│   ├── mkdocs >=1.6 
+│   │   ├── click >=7.0 
+│   │   │   └── colorama * 
+│   │   ├── colorama >=0.4 (circular dependency aborted here)
+│   │   ├── ghp-import >=1.0 
+│   │   │   └── python-dateutil >=2.8.1 
+│   │   │       └── six >=1.5 
+│   │   ├── jinja2 >=2.11.1 (circular dependency aborted here)
+│   │   ├── markdown >=3.3.6 (circular dependency aborted here)
+│   │   ├── markupsafe >=2.0.1 (circular dependency aborted here)
+│   │   ├── mergedeep >=1.3.4 
+│   │   ├── mkdocs-get-deps >=0.2.0 
+│   │   │   ├── mergedeep >=1.3.4 (circular dependency aborted here)
+│   │   │   ├── platformdirs >=2.2.0 
+│   │   │   └── pyyaml >=5.1 
+│   │   ├── packaging >=20.5 
+│   │   ├── pathspec >=0.11.1 
+│   │   ├── pyyaml >=5.1 (circular dependency aborted here)
+│   │   ├── pyyaml-env-tag >=0.1 
+│   │   │   └── pyyaml * (circular dependency aborted here)
+│   │   └── watchdog >=2.0 
+│   ├── mkdocs-autorefs >=1.4 
+│   │   ├── markdown >=3.3 (circular dependency aborted here)
+│   │   ├── markupsafe >=2.0.1 (circular dependency aborted here)
+│   │   └── mkdocs >=1.1 (circular dependency aborted here)
+│   └── pymdown-extensions >=6.3 
+│       ├── markdown >=3.6 (circular dependency aborted here)
+│       └── pyyaml * (circular dependency aborted here)
+└── typing-extensions >=4.0
 poetry 2.2.1 Python dependency management and packaging made easy.
 ├── build >=1.2.1,<2.0.0
 │   ├── colorama * 
@@ -116,30 +240,6 @@ pytest 9.0.0 pytest: simple powerful testing with Python
 ├── pluggy >=1.5,<2
 ├── pygments >=2.7.2
 └── tomli >=1
-rstcheck 3.5.0 Checks syntax of reStructuredText and code blocks nested within it
-└── docutils >=0.7
-sphinx 4.5.0 Python documentation generator
-├── alabaster >=0.7,<0.8
-├── babel >=1.3
-├── colorama >=0.3.5
-├── docutils >=0.14,<0.18
-├── imagesize *
-├── jinja2 >=2.3
-│   └── markupsafe >=2.0 
-├── packaging *
-├── pygments >=2.0
-├── requests >=2.5.0
-│   ├── certifi >=2017.4.17 
-│   ├── charset-normalizer >=2,<4 
-│   ├── idna >=2.5,<4 
-│   └── urllib3 >=1.21.1,<3 
-├── snowballstemmer >=1.1
-├── sphinxcontrib-applehelp *
-├── sphinxcontrib-devhelp *
-├── sphinxcontrib-htmlhelp >=2.0.0
-├── sphinxcontrib-jsmath *
-├── sphinxcontrib-qthelp *
-└── sphinxcontrib-serializinghtml >=1.1.5
 toml 0.10.2 Python Library for Tom's Obvious, Minimal Language
 tox 3.28.0 tox is a generic virtualenv management and test command line tool
 ├── colorama >=0.4.1
@@ -154,4 +254,3 @@ tox 3.28.0 tox is a generic virtualenv management and test command line tool
     ├── filelock >=3.12.2,<4 
     ├── platformdirs >=3.9.1,<5 
     └── typing-extensions >=4.13.2 
-watchdog 2.3.1 Filesystem events monitoring
