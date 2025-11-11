@@ -22,7 +22,7 @@ For a quick set-up, without having to install much:
 > cd <to the repo directory>
 > docker image fetch glenjarvis/github_commit_status:latest
 > docker run --rm -it -v $(pwd):/mnt/repo glenjarvis/github_commit_status bash
-> poetry shell
+> source venv/bin/activate
 > ```
 
 In another window, you can use any text editor that you want while
@@ -98,29 +98,20 @@ If you need help with background knowledge, see online training video:
     > (venv)$ pip install --upgrade pip
     > ```
 
-6.  Decide if you wish to use Poetry (I recommend it).
+6.  Install the project with development dependencies using Hatch:
 
-    It will do a pretty good job of keeping the dependencies for this
-    project organized. If you use Poetry, do the following and skip to
-    step 9.
+    This project uses Hatch for dependency management. Install the project
+    in editable mode with development dependencies:
 
     > ``` bash
-    > (venv)$ pip install poetry
-    > (venv)$ poetry install
+    > (venv)$ pip install -e ".[dev]"
     > ```
 
-7.  If you didn't do Poetry above, go ahead and install the project as
-    normal:
+    Alternatively, if you prefer locked versions of all dependencies:
 
-    This project is in wheel format. So, simply install a reference in
-    your virtual environment so that you can edit files in this folder
-    and see an immediate affect in the virtual environment:
-
-        (venv)$ pip install .
-
-8.  Install extra packages for development:
-
-        (venv)$  pip install -r requirements_dev.txt
+    > ``` bash
+    > (venv)$ pip install -r requirements/development.txt
+    > ```
 
 9.  (optional) Install the Git Hooks. Git Hooks are a way of running
     code locally against your commits before you make them. Often this
