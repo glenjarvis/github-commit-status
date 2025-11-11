@@ -122,17 +122,13 @@ hook-go-away:
 
 hooks-go-away: hook-go-away
 
-docs: ## generate Sphinx HTML documentation, including API docs
+docs: ## generate MkDocs HTML documentation
 	@echo "+ $@"
-	@rm -f docs/github_commit_status.rst
-	@sphinx-apidoc -o docs/ github_commit_status
-	@rm -f docs/modules.rst
-	@$(MAKE) -C docs clean
-	@$(MAKE) -C docs html
-	@$(BROWSER) docs/_build/html/index.html
+	mkdocs build
+	@$(BROWSER) site/index.html
 
-servedocs: docs ## compile the docs watching for changes
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
+servedocs: ## serve the docs watching for changes
+	mkdocs serve
 
 release: dist ## package and upload a release
 	twine upload dist/*

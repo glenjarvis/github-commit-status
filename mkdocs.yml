@@ -1,0 +1,35 @@
+site_name: github_commit_status
+site_description: A simple command line for updating a commit's status on GitHub
+site_author: Glen Jarvis
+repo_url: https://github.com/glenjarvis/github_commit_status
+repo_name: github_commit_status
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+  - README: readme.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Contributing: contributing.md
+  - Authors: authors.md
+  - History: history.md
+  - API Reference: github_commit_status.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - md_in_html

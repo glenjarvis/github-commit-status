@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "github_commit_status"
-version = "1.2.0"
+version = "1.3.0"
 description = "A simple command line for updating a commit's status on GitHub"
 authors = [
     "Glen Jarvis <<glen@glenjarvis.com>>"
 ]
 
 license = "MIT"
-readme = 'README.rst'  # TODO: Are Sphinx files supported? Markdown files are supported
+readme = 'README.md'  # Updated to use Markdown
 
 repository = "https://github.com/glenjarvis/github_commit_status"
 homepage = "https://github.com/glenjarvis/github_commit_status"
@@ -25,9 +25,9 @@ pytest = ">5"
 flake8 = "^4.0"
 tox = "^3.14"
 coverage = "^6.0"
-rstcheck = "^3.3"
-watchdog = "^2.1"
-sphinx = "^4.1"
+mkdocs = "^1.5"
+mkdocs-material = "^9.4"
+mkdocstrings-python = "^1.7"
 
 [tool.poetry.scripts]
 github_commit_status = "github_commit_status.cli:cli"
