@@ -51,16 +51,15 @@ Example::
 """
 
 import os
+from importlib.metadata import PackageNotFoundError, version
 
 import click
 from github import Github
 
 try:
-    from importlib.metadata import version
     VERSION = version("github_commit_status")
-except Exception:
+except PackageNotFoundError:
     VERSION = "unknown"
-
 INVALID_TOKEN = "Invalid GitHub Token"
 
 
