@@ -98,5 +98,5 @@ dist: clean ## builds source and wheel package
 	ls -l dist
 
 install: ## install the package in editable mode for development
-	pip install -e .
+	pip install -e ".[dev]"
 
