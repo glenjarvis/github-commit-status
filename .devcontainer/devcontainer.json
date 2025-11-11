@@ -28,6 +28,14 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "remoteUser": "user",
-  "forwardPorts": []
+  "forwardPorts": [],
+  // This project doesn't actually need auto-forwarded ports. It's command line
+  // only. Suppress auto-forwarded port notifications from development
+  // tools (mkdocs serve, pytest servers, etc.) in the typical dev port range:
+  "portsAttributes": {
+    "3000-9999": {
+      "onAutoForward": "silent"
+    }
+  }
 }
 
