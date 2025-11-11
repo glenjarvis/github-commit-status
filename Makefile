@@ -26,8 +26,6 @@ endef
 export BROWSER_PYSCRIPT
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
-DOCKER_VERSION = latest
-
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
@@ -40,17 +38,6 @@ clean-build: ## Remove build artifacts
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
 
-clean-containers: ## Remove all docker containers
-	docker container ls -a  | cut -d' ' -f 1  | grep -v CONTAINER | xargs docker container rm
-
-clean-images: ## Clean github_commit_status images
-	# Please help me learn how to DRY this up
-	docker image rm glenjarvis/github_commit_status:${DOCKER_VERSION} || true
-	docker image rm glenjarvis/github_commit_status:py-3.5.9-${DOCKER_VERSION} || true
-	docker image rm glenjarvis/github_commit_status:py-3.6.10-${DOCKER_VERSION} || true
-	docker image rm glenjarvis/github_commit_status:py-3.7.7-${DOCKER_VERSION} || true
-	docker image ls -a | grep none| awk '{print $$3}' | xargs docker image rm
-
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
@@ -58,21 +45,9 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
-
-docker_setup:
-	docker-compose build
-	
-docker-build-all: docker_setup  ## Build docker images for all supported versions
-
-intra-container-test:  ## Tests from inside our docker containers
-	poetry env list --full-path | cut -d' ' -f1 > /tmp/python_base
-	`cat /tmp/python_base`/bin/python tests/test_github_commit_status.py
-
-image: docker_setup  ## Build docker image
 
 lint: ## check style with pylint and black
 	pylint github_commit_status tests
@@ -86,14 +61,6 @@ reqs: ## Update all requirements with pip-compile
 test: ## run tests quickly with the default Python
 	python tests/test_github_commit_status.py
 
-test-all: ## Run tests in all containers
-	# TODO: Please help me learn to make this more DRY
-	docker-compose build
-	docker run --rm -it glenjarvis/github_commit_status:latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.5.9-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.6.10-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.7.7-latest /bin/bash -c 'make intra-container-test'
-
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
 	git tag -s v$(VERSION) -m 'Release $(VERSION)'
@@ -102,13 +69,6 @@ coverage: ## check code coverage quickly with the default Python
 	coverage run --source github_commit_status python tests/test_github_commit_status.py
 	coverage report -m
 	coverage html
-
-run: ## Build docker image and run it
-	# TODO: Break out so that we don't have to build all images to run
-	docker-compose up
-	# TODO: Please help me get past need to manually type 'poetry shell'
-	echo "At prompt ==> poetry shell"
-	docker run -it github_commit_status bash
 
 git-hook:
 	cp githooks/pre-commit  .git/hooks/
@@ -134,9 +94,9 @@ release: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
-	poetry build
+	python -m build
 	ls -l dist
 
-install: clean ## install the package to the active Python's site-packages
-	poetry install
+install: ## install the package in editable mode for development
+	pip install -e ".[dev]"
 
