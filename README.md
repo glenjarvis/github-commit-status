@@ -8,7 +8,7 @@ A simple command line for updating a commit's status in GitHub
 
 - [GitHub repo](https://github.com/glenjarvis/github_commit_status/)
 - [Online
-  Documentation](https://github-commit-status.readthedocs.io/en/latest/readme.html)
+  Documentation](https://github-commit-status.readthedocs.io/)
 - [Free
   Software](https://github.com/glenjarvis/github_commit_status/blob/main/LICENSE)
 
