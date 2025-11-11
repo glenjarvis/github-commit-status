@@ -4,7 +4,7 @@ A simple command line for updating a commit's status in GitHub
 
 ## Project and Build Status
 
-[![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/?version=latest)](http://github_commit_status.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/)](https://github-commit-status.readthedocs.io/en/stable/)
 
 - [GitHub repo](https://github.com/glenjarvis/github_commit_status/)
 - [Online
@@ -212,4 +212,4 @@ To maximize the chance that your hard work gets merged, we have these
 guidelines to guide you along the way to a successfully merged Pull
 Request:
 
-- [Contributing](https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.rst)
+- [Contributing](https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.md)
