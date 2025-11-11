@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to **github_commit_status**!
+Thank you for contributing to **github_commit_status**!
 
 Your contributions are very much welcomed and credit will be given. For comprehensive contributing guidelines, including setup instructions, code style, and pull request guidelines, please visit:
 

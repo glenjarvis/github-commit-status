@@ -113,7 +113,7 @@ If you need help with background knowledge, see online training video:
     > (venv)$ pip install -r requirements/development.txt
     > ```
 
-9.  (optional) Install the Git Hooks. Git Hooks are a way of running
+7.  (optional) Install the Git Hooks. Git Hooks are a way of running
     code locally against your commits before you make them. Often this
     can catch errors before they are pushed to GitHub.
 
@@ -138,7 +138,7 @@ If you need help with background knowledge, see online training video:
     > $ make hooks-go-away
     > ```
 
-10. Check out a topic branch and begin working.
+8. Check out a topic branch and begin working.
 
 ### Extra Code Style
 
