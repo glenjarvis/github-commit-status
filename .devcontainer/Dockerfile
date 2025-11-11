@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
-ARG USERNAME=vscode
+ARG USERNAME=user
 ARG USER_UID=1000
 ARG USER_GID=1000
 
@@ -22,7 +22,7 @@ USER $USERNAME
 WORKDIR /workspace
 
 # Set PATH for pip packages (needed before postCreateCommand runs)
-ENV PATH="/home/vscode/.local/bin:${PATH}"
+ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
 # Enable bash completion
 RUN echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >> ~/.bashrc
