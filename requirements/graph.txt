@@ -1,153 +1,157 @@
-click 8.0.3 Composable command line interface toolkit
-|-- colorama *
-`-- importlib-metadata *
-    `-- zipp >=0.5 
-coverage 6.1.2 Code coverage measurement for Python
+click 8.3.0 Composable command line interface toolkit
+└── colorama *
+coverage 6.5.0 Code coverage measurement for Python
 flake8 4.0.1 the modular source code checker: pep8 pyflakes and co
-|-- importlib-metadata <4.3
-|   `-- zipp >=0.5 
-|-- mccabe >=0.6.0,<0.7.0
-|-- pycodestyle >=2.8.0,<2.9.0
-`-- pyflakes >=2.4.0,<2.5.0
-poetry 1.1.11 Python dependency management and packaging made easy.
-|-- cachecontrol >=0.12.4,<0.13.0
-|   |-- lockfile >=0.9 
-|   |-- msgpack >=0.5.2 
-|   `-- requests * 
-|       |-- certifi >=2017.4.17 
-|       |-- charset-normalizer >=2.0.0,<2.1.0 
-|       |-- idna >=2.5,<4 
-|       `-- urllib3 >=1.21.1,<1.27 
-|-- cachy >=0.3.0,<0.4.0
-|-- cleo >=0.8.1,<0.9.0
-|   `-- clikit >=0.6.0,<0.7.0 
-|       |-- crashtest >=0.3.0,<0.4.0 
-|       |-- pastel >=0.2.0,<0.3.0 
-|       `-- pylev >=1.3,<2.0 
-|-- clikit >=0.6.2,<0.7.0
-|   |-- crashtest >=0.3.0,<0.4.0 
-|   |-- pastel >=0.2.0,<0.3.0 
-|   `-- pylev >=1.3,<2.0 
-|-- crashtest >=0.3.0,<0.4.0
-|-- html5lib >=1.0,<2.0
-|   |-- six >=1.9 
-|   `-- webencodings * 
-|-- importlib-metadata >=1.6.0,<2.0.0
-|   `-- zipp >=0.5 
-|-- keyring >=21.2.0,<22.0.0
-|   |-- importlib-metadata >=1 
-|   |   `-- zipp >=0.5 
-|   |-- jeepney >=0.4.2 
-|   |-- pywin32-ctypes <0.1.0 || >0.1.0,<0.1.1 || >0.1.1 
-|   `-- secretstorage >=3.2 
-|       |-- cryptography >=2.0 
-|       |   `-- cffi >=1.12 
-|       |       `-- pycparser * 
-|       `-- jeepney >=0.6 (circular dependency aborted here)
-|-- packaging >=20.4,<21.0
-|   `-- pyparsing >=2.0.2 
-|-- pexpect >=4.7.0,<5.0.0
-|   `-- ptyprocess >=0.5 
-|-- pkginfo >=1.4,<2.0
-|-- poetry-core >=1.0.7,<1.1.0
-|   `-- importlib-metadata >=1.7.0,<2.0.0 
-|       `-- zipp >=0.5 
-|-- requests >=2.18,<3.0
-|   |-- certifi >=2017.4.17 
-|   |-- charset-normalizer >=2.0.0,<2.1.0 
-|   |-- idna >=2.5,<4 
-|   `-- urllib3 >=1.21.1,<1.27 
-|-- requests-toolbelt >=0.9.1,<0.10.0
-|   `-- requests >=2.0.1,<3.0.0 
-|       |-- certifi >=2017.4.17 
-|       |-- charset-normalizer >=2.0.0,<2.1.0 
-|       |-- idna >=2.5,<4 
-|       `-- urllib3 >=1.21.1,<1.27 
-|-- shellingham >=1.1,<2.0
-|-- tomlkit >=0.7.0,<1.0.0
-`-- virtualenv >=20.0.26,<21.0.0
-    |-- backports.entry-points-selectable >=1.0.4 
-    |   `-- importlib-metadata * 
-    |       `-- zipp >=0.5 
-    |-- distlib >=0.3.1,<1 
-    |-- filelock >=3.2,<4 
-    |-- importlib-metadata >=0.12 (circular dependency aborted here)
-    |-- platformdirs >=2,<3 
-    `-- six >=1.9.0,<2 
-pygithub 1.55 Use the full Github API v3
-|-- deprecated *
-|   `-- wrapt >=1.10,<2 
-|-- pyjwt >=2.0
-|-- pynacl >=1.4.0
-|   |-- cffi >=1.4.1 
-|   |   `-- pycparser * 
-|   `-- six * 
-`-- requests >=2.14.0
-    |-- certifi >=2017.4.17 
-    |-- charset-normalizer >=2.0.0,<2.1.0 
-    |-- idna >=2.5,<4 
-    `-- urllib3 >=1.21.1,<1.27 
-pytest 6.2.5 pytest: simple powerful testing with Python
-|-- atomicwrites >=1.0
-|-- attrs >=19.2.0
-|-- colorama *
-|-- importlib-metadata >=0.12
-|   `-- zipp >=0.5 
-|-- iniconfig *
-|-- packaging *
-|   `-- pyparsing >=2.0.2 
-|-- pluggy >=0.12,<2.0
-|   `-- importlib-metadata >=0.12 
-|       `-- zipp >=0.5 
-|-- py >=1.8.2
-`-- toml *
-rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
-`-- docutils >=0.7
-sphinx 4.3.0 Python documentation generator
-|-- alabaster >=0.7,<0.8
-|-- babel >=1.3
-|   `-- pytz >=2015.7 
-|-- colorama >=0.3.5
-|-- docutils >=0.14,<0.18
-|-- imagesize *
-|-- jinja2 >=2.3
-|   `-- markupsafe >=2.0 
-|-- packaging *
-|   `-- pyparsing >=2.0.2 
-|-- pygments >=2.0
-|-- requests >=2.5.0
-|   |-- certifi >=2017.4.17 
-|   |-- charset-normalizer >=2.0.0,<2.1.0 
-|   |-- idna >=2.5,<4 
-|   `-- urllib3 >=1.21.1,<1.27 
-|-- snowballstemmer >=1.1
-|-- sphinxcontrib-applehelp *
-|-- sphinxcontrib-devhelp *
-|-- sphinxcontrib-htmlhelp >=2.0.0
-|-- sphinxcontrib-jsmath *
-|-- sphinxcontrib-qthelp *
-`-- sphinxcontrib-serializinghtml >=1.1.5
+├── mccabe >=0.6.0,<0.7.0
+├── pycodestyle >=2.8.0,<2.9.0
+└── pyflakes >=2.4.0,<2.5.0
+poetry 2.2.1 Python dependency management and packaging made easy.
+├── build >=1.2.1,<2.0.0
+│   ├── colorama * 
+│   ├── importlib-metadata >=4.6 
+│   │   └── zipp >=3.20 
+│   ├── packaging >=19.1 
+│   ├── pyproject-hooks * 
+│   └── tomli >=1.1.0 
+├── cachecontrol >=0.14.0,<0.15.0
+│   ├── filelock >=3.8.0 
+│   ├── msgpack >=0.5.2,<2.0.0 
+│   └── requests >=2.16.0 
+│       ├── certifi >=2017.4.17 
+│       ├── charset-normalizer >=2,<4 
+│       ├── idna >=2.5,<4 
+│       └── urllib3 >=1.21.1,<3 
+├── cleo >=2.1.0,<3.0.0
+│   ├── crashtest >=0.4.1,<0.5.0 
+│   └── rapidfuzz >=3.0.0,<4.0.0 
+├── dulwich >=0.24.0,<0.25.0
+│   ├── typing-extensions >=4.6.0 
+│   └── urllib3 >=2.2.2 
+├── fastjsonschema >=2.18.0,<3.0.0
+├── findpython >=0.6.2,<0.8.0
+│   ├── packaging >=20 
+│   └── platformdirs >=4.3.6 
+├── installer >=0.7.0,<0.8.0
+├── keyring >=25.1.0,<26.0.0
+│   ├── importlib-metadata >=4.11.4 
+│   │   └── zipp >=3.20 
+│   ├── jaraco-classes * 
+│   │   └── more-itertools * 
+│   ├── jaraco-context * 
+│   │   └── backports-tarfile * 
+│   ├── jaraco-functools * 
+│   │   └── more-itertools * (circular dependency aborted here)
+│   ├── jeepney >=0.4.2 
+│   ├── pywin32-ctypes >=0.2.0 
+│   └── secretstorage >=3.2 
+│       ├── cryptography >=2.0 
+│       │   ├── cffi >=2.0.0 
+│       │   │   └── pycparser * 
+│       │   └── typing-extensions >=4.13.2 
+│       └── jeepney >=0.6 (circular dependency aborted here)
+├── packaging >=24.2
+├── pbs-installer >=2025.1.6,<2026.0.0
+│   ├── httpx >=0.27.0,<1 
+│   │   ├── anyio * 
+│   │   │   ├── exceptiongroup >=1.0.2 
+│   │   │   │   └── typing-extensions >=4.6.0 
+│   │   │   ├── idna >=2.8 
+│   │   │   ├── sniffio >=1.1 
+│   │   │   └── typing-extensions >=4.5 (circular dependency aborted here)
+│   │   ├── certifi * 
+│   │   ├── httpcore ==1.* 
+│   │   │   ├── certifi * (circular dependency aborted here)
+│   │   │   └── h11 >=0.16 
+│   │   └── idna * (circular dependency aborted here)
+│   └── zstandard >=0.21.0 
+├── pkginfo >=1.12,<2.0
+├── platformdirs >=3.0.0,<5
+├── poetry-core 2.2.1
+├── pyproject-hooks >=1.0.0,<2.0.0
+├── requests >=2.26,<3.0
+│   ├── certifi >=2017.4.17 
+│   ├── charset-normalizer >=2,<4 
+│   ├── idna >=2.5,<4 
+│   └── urllib3 >=1.21.1,<3 
+├── requests-toolbelt >=1.0.0,<2.0.0
+│   └── requests >=2.0.1,<3.0.0 
+│       ├── certifi >=2017.4.17 
+│       ├── charset-normalizer >=2,<4 
+│       ├── idna >=2.5,<4 
+│       └── urllib3 >=1.21.1,<3 
+├── shellingham >=1.5,<2.0
+├── tomli >=2.0.1,<3.0.0
+├── tomlkit >=0.11.4,<1.0.0
+├── trove-classifiers >=2022.5.19
+├── virtualenv >=20.26.6
+│   ├── distlib >=0.3.7,<1 
+│   ├── filelock >=3.12.2,<4 
+│   ├── platformdirs >=3.9.1,<5 
+│   └── typing-extensions >=4.13.2 
+└── xattr >=1.0.0,<2.0.0
+    └── cffi >=1.16.0 
+        └── pycparser * 
+pygithub 1.59.1 Use the full Github API v3
+├── deprecated *
+│   └── wrapt >=1.10,<3 
+├── pyjwt >=2.4.0
+│   └── cryptography >=3.4.0 
+│       ├── cffi >=2.0.0 
+│       │   └── pycparser * 
+│       └── typing-extensions >=4.13.2 
+├── pynacl >=1.4.0
+│   └── cffi >=2.0.0 
+│       └── pycparser * 
+└── requests >=2.14.0
+    ├── certifi >=2017.4.17 
+    ├── charset-normalizer >=2,<4 
+    ├── idna >=2.5,<4 
+    └── urllib3 >=1.21.1,<3 
+pytest 9.0.0 pytest: simple powerful testing with Python
+├── colorama >=0.4
+├── exceptiongroup >=1
+│   └── typing-extensions >=4.6.0 
+├── iniconfig >=1.0.1
+├── packaging >=22
+├── pluggy >=1.5,<2
+├── pygments >=2.7.2
+└── tomli >=1
+rstcheck 3.5.0 Checks syntax of reStructuredText and code blocks nested within it
+└── docutils >=0.7
+sphinx 4.5.0 Python documentation generator
+├── alabaster >=0.7,<0.8
+├── babel >=1.3
+├── colorama >=0.3.5
+├── docutils >=0.14,<0.18
+├── imagesize *
+├── jinja2 >=2.3
+│   └── markupsafe >=2.0 
+├── packaging *
+├── pygments >=2.0
+├── requests >=2.5.0
+│   ├── certifi >=2017.4.17 
+│   ├── charset-normalizer >=2,<4 
+│   ├── idna >=2.5,<4 
+│   └── urllib3 >=1.21.1,<3 
+├── snowballstemmer >=1.1
+├── sphinxcontrib-applehelp *
+├── sphinxcontrib-devhelp *
+├── sphinxcontrib-htmlhelp >=2.0.0
+├── sphinxcontrib-jsmath *
+├── sphinxcontrib-qthelp *
+└── sphinxcontrib-serializinghtml >=1.1.5
 toml 0.10.2 Python Library for Tom's Obvious, Minimal Language
-tox 3.24.4 tox is a generic virtualenv management and test command line tool
-|-- colorama >=0.4.1
-|-- filelock >=3.0.0
-|-- importlib-metadata >=0.12
-|   `-- zipp >=0.5 
-|-- packaging >=14
-|   `-- pyparsing >=2.0.2 
-|-- pluggy >=0.12.0
-|   `-- importlib-metadata >=0.12 
-|       `-- zipp >=0.5 
-|-- py >=1.4.17
-|-- six >=1.14.0
-|-- toml >=0.9.4
-`-- virtualenv >=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,<20.0.3 || >20.0.3,<20.0.4 || >20.0.4,<20.0.5 || >20.0.5,<20.0.6 || >20.0.6,<20.0.7 || >20.0.7
-    |-- backports.entry-points-selectable >=1.0.4 
-    |   `-- importlib-metadata * 
-    |       `-- zipp >=0.5 
-    |-- distlib >=0.3.1,<1 
-    |-- filelock >=3.2,<4 
-    |-- importlib-metadata >=0.12 (circular dependency aborted here)
-    |-- platformdirs >=2,<3 
-    `-- six >=1.9.0,<2 
-watchdog 2.1.6 Filesystem events monitoring
+tox 3.28.0 tox is a generic virtualenv management and test command line tool
+├── colorama >=0.4.1
+├── filelock >=3.0.0
+├── packaging >=14
+├── pluggy >=0.12.0
+├── py >=1.4.17
+├── six >=1.14.0
+├── tomli >=2.0.1
+└── virtualenv >=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,<20.0.3 || >20.0.3,<20.0.4 || >20.0.4,<20.0.5 || >20.0.5,<20.0.6 || >20.0.6,<20.0.7 || >20.0.7
+    ├── distlib >=0.3.7,<1 
+    ├── filelock >=3.12.2,<4 
+    ├── platformdirs >=3.9.1,<5 
+    └── typing-extensions >=4.13.2 
+watchdog 2.3.1 Filesystem events monitoring

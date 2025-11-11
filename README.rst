@@ -7,10 +7,6 @@ A simple command line for updating a commit's status in GitHub
 Project and Build Status
 ------------------------
 
-.. image:: https://circleci.com/gh/glenjarvis/github-commit-status.svg?style=shield
-     :target: https://circle-ci.com/gh/glenjarvis/github_commit_status.svg
-     :alt: CircleCI build status
-
 .. image:: https://readthedocs.org/projects/github_commit_status/badge/?version=latest
      :target: http://github_commit_status.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
