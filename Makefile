@@ -74,8 +74,9 @@ intra-container-test:  ## Tests from inside our docker containers
 
 image: docker_setup  ## Build docker image
 
-lint: ## check style with flake8
-	flake8 github_commit_status tests
+lint: ## check style with pylint and black
+	pylint github_commit_status tests
+	black --check github_commit_status tests
 
 reqs: ## Update all requirements with pip-compile
 	pip-compile --upgrade pyproject.toml -o requirements/requirements.txt

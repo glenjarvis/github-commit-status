@@ -91,7 +91,7 @@ If you need help with background knowledge, see online training video:
     > }
     > ```
 
-5.  Ensure you have a versin of pip less than version 25.3 (until a pip-tools
+5.  Ensure you have a version of pip less than version 25.3 (until a pip-tools
     bug is fixed):
 
     > ``` bash
@@ -103,7 +103,7 @@ If you need help with background knowledge, see online training video:
 
 6.  Install the project with development dependencies using Hatch:
 
-    This project uses Hatch for dependency management. Install the project
+    This project uses pip-tools for dependency management. Install the project
     in editable mode with development dependencies:
 
     > ``` bash

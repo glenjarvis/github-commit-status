@@ -29,8 +29,8 @@ the correct behavior -- pip now requires all packages to be [PEP
 517](https://peps.python.org/pep-0517/) compliant.
 
 However, `pip-tools 7.5.1` (the latest version) still tries to use this removed flag,
-causing an `AttributeError: 'EntryPoints' object has no attribute 'get' when run with
-pip 25.3+`.
+causing an `TypeError: RequirementCommand.make_resolver() got an unexpected
+keyword argument 'use_pep517'`.
 
 #### Temporary Workaround
 
