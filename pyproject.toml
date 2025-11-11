@@ -30,6 +30,7 @@ dev = [
     "mkdocs-material>=9.4",
     "mkdocstrings-python>=1.7",
     "pip-tools>=7.0",
+    "twine>=4.0",
 ]
 
 [project.scripts]
