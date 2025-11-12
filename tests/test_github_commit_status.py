@@ -32,80 +32,78 @@ class TestGithub_commit_status(unittest.TestCase):
     def test_cli_help(self):
         """It responds properly to --help"""
         self.assertEqual(self.help_result.exit_code, 0)
-        self.assertTrue(
-            "Show this message and exit." in self.help_result.output
-        )
+        self.assertIn("Show this message and exit.", self.help_result.output)
 
     def test_cli_version(self):
         """It responds properly to --version"""
         self.assertEqual(self.version_result.exit_code, 0)
-        self.assertTrue("Version" in self.version_result.output)
+        self.assertIn("Version", self.version_result.output)
 
     def test_cli_subcommands(self):
         """It has subcommands prompt and update"""
         self.assertEqual(self.help_result.exit_code, 0)
-        self.assertTrue(
-            "prompt  Prompt for missing options" in self.help_result.output
+        self.assertIn(
+            "prompt  Prompt for missing options", self.help_result.output
         )
-        self.assertTrue(
-            "update  If all options are provided" in self.help_result.output
+        self.assertIn(
+            "update  If all options are provided", self.help_result.output
         )
 
     def test_cli_prompt_github_token(self):
         """It responds to --github-token argument"""
 
-        self.assertTrue("--github-token TEXT" in self.prompt_result.output)
+        self.assertIn("--github-token TEXT", self.prompt_result.output)
 
     def test_cli_prompt_github_repo(self):
         """It responds to --repo argument"""
 
-        self.assertTrue("--repo TEXT" in self.prompt_result.output)
+        self.assertIn("--repo TEXT", self.prompt_result.output)
 
     def test_cli_prompt_github_commit(self):
         """It responds to --commit argument"""
 
-        self.assertTrue("--commit TEXT" in self.prompt_result.output)
+        self.assertIn("--commit TEXT", self.prompt_result.output)
 
     def test_cli_prompt_github_status(self):
         """It responds to --status argument"""
 
-        self.assertTrue(
-            "--status [error|failure|pending|success]"
-            in self.prompt_result.output
+        self.assertIn(
+            "--status [error|failure|pending|success]",
+            self.prompt_result.output,
         )
 
     def test_cli_prompt_github_description(self):
         """It responds to --description argument"""
 
-        self.assertTrue("--description TEXT" in self.prompt_result.output)
+        self.assertIn("--description TEXT", self.prompt_result.output)
 
     def test_cli_update_github_token(self):
         """It does not respond to --github-token argument"""
 
-        self.assertFalse("--github-token TEXT" in self.update_result.output)
+        self.assertNotIn("--github-token TEXT", self.update_result.output)
 
     def test_cli_update_github_repo(self):
         """It responds to --repo argument"""
 
-        self.assertTrue("--repo TEXT" in self.update_result.output)
+        self.assertIn("--repo TEXT", self.update_result.output)
 
     def test_cli_update_github_commit(self):
         """It responds to --commit argument"""
 
-        self.assertTrue("--commit TEXT" in self.update_result.output)
+        self.assertIn("--commit TEXT", self.update_result.output)
 
     def test_cli_update_github_status(self):
         """It responds to --status argument"""
 
-        self.assertTrue(
-            "--status [error|failure|pending|success]"
-            in self.update_result.output
+        self.assertIn(
+            "--status [error|failure|pending|success]",
+            self.update_result.output,
         )
 
     def test_cli_update_github_description(self):
         """It responds to --description argument"""
 
-        self.assertTrue("--description TEXT" in self.update_result.output)
+        self.assertIn("--description TEXT", self.update_result.output)
 
     def test_cli_update_github_commit_length(self):
         """It ensures --commit argument is less than 40 characters"""
@@ -114,9 +112,7 @@ class TestGithub_commit_status(unittest.TestCase):
         args_opts = ["update", f"--commit={commit_chars}"]
         args_opts.extend(self.SAMPLE_SETTINGS)
         result = self.runner.invoke(cli.cli, args_opts)
-        self.assertTrue(
-            "commit should be less than 40 characters" in result.output
-        )
+        self.assertIn("commit should be less than 40 characters", result.output)
 
     def test_cli_update_github_commit_hex(self):
         """It ensures --commit argument only accepts hexadecimal"""
@@ -124,7 +120,7 @@ class TestGithub_commit_status(unittest.TestCase):
         args_opts = ["update", "--commit=1g"]
         args_opts.extend(self.SAMPLE_SETTINGS)
         result = self.runner.invoke(cli.cli, args_opts)
-        self.assertTrue("commit should be hexadecimal" in result.output)
+        self.assertIn("commit should be hexadecimal", result.output)
 
 
 if __name__ == "__main__":
