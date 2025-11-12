@@ -47,9 +47,9 @@ include = [
     "/tests",
     "/requirements",
     "/docs",
+    "/mkdocs.yml",
     "/README.md",
     "/LICENSE",
-    "/CONTRIBUTING.md",
     "/Makefile",
     "/pyproject.toml",
 ]
