@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "github_commit_status"
-version = "1.3.0"
+version = "1.4.0"
 description = "A simple command line for updating a commit's status on GitHub"
 readme = "README.md"
 license = { text = "MIT" }
