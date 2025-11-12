@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "github_commit_status"
-version = "1.4.0"
+version = "1.4.1"
 description = "A simple command line for updating a commit's status on GitHub"
 readme = "README.md"
 license = { text = "MIT" }
@@ -40,4 +40,17 @@ gcs = "github_commit_status.cli:cli"
 [project.urls]
 Repository = "https://github.com/glenjarvis/github_commit_status"
 Homepage = "https://github.com/glenjarvis/github_commit_status"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/github_commit_status",
+    "/tests",
+    "/requirements",
+    "/docs",
+    "/mkdocs.yml",
+    "/README.md",
+    "/LICENSE",
+    "/Makefile",
+    "/pyproject.toml",
+]
 
