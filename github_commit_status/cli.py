@@ -70,10 +70,7 @@ def update_github(repo_name, github_token, commit, status, description):
     repo = github_client.get_user().get_repo(repo_name)
     sha = repo.get_commit(sha=commit)
     sha.create_status(
-        state=status,
-        target_url="",
-        description=description,
-        context='ci/fake'
+        state=status, target_url="", description=description, context="ci/fake"
     )
     click.echo("GitHub has been updated.")
 
@@ -89,6 +86,7 @@ def validate_commit_sha1(ctx, param, value):
     try:
         int(value, 16)
     except ValueError:
+        # pylint: disable=raise-missing-from
         raise click.BadParameter("commit should be hexadecimal")
 
     return value
@@ -101,33 +99,51 @@ def print_version(ctx, param, value):
     # pylint: disable=unused-argument
     if not value or ctx.resilient_parsing:
         return
-    click.echo('Version {}'.format(VERSION))
+    click.echo(f"Version {VERSION}")
     ctx.exit()
 
 
 @click.group()
-@click.option('--version', is_flag=True, callback=print_version,
-              expose_value=False, is_eager=True)
+@click.option(
+    "--version",
+    is_flag=True,
+    callback=print_version,
+    expose_value=False,
+    is_eager=True,
+)
 def cli():
     """Update the status of a commit in GitHub"""
-    pass
 
 
 # pylint: disable=no-value-for-parameter
 @click.command()
-@click.option('--github-token', prompt='GitHub Token',
-              default=lambda: os.environ.get('GITHUB_COMMIT_STATUS_TOKEN', ''))
-@click.option('--repo', prompt='Name of the GitHub repository',
-              default=lambda: os.environ.get('GITHUB_COMMIT_STATUS_REPO', ''),
-              help='Name of the GitHub repository')
-@click.option('--commit', callback=validate_commit_sha1, prompt='Commit SHA',
-              default=lambda: os.environ.get('GITHUB_COMMIT_STATUS_COMMIT'),
-              help='The 40 character SHA1 string for the commit.')
-@click.option('--status',
-              type=click.Choice(['error', 'failure', 'pending', 'success']),
-              help='The status of the commit', prompt=True)
-@click.option('--description', prompt='Description',
-              help='Description for the test')
+@click.option(
+    "--github-token",
+    envvar="GITHUB_COMMIT_STATUS_TOKEN",
+    prompt="GitHub Token",
+)
+@click.option(
+    "--repo",
+    envvar="GITHUB_COMMIT_STATUS_REPO",
+    prompt="Name of the GitHub repository",
+    help="Name of the GitHub repository",
+)
+@click.option(
+    "--commit",
+    envvar="GITHUB_COMMIT_STATUS_COMMIT",
+    callback=validate_commit_sha1,
+    prompt="Commit SHA",
+    help="The 40 character SHA1 string for the commit.",
+)
+@click.option(
+    "--status",
+    type=click.Choice(["error", "failure", "pending", "success"]),
+    help="The status of the commit",
+    prompt=True,
+)
+@click.option(
+    "--description", prompt="Description", help="Description for the test"
+)
 def prompt(repo, github_token, commit, status, description):
     """Prompt for missing options and update GitHub
 
@@ -145,14 +161,20 @@ def prompt(repo, github_token, commit, status, description):
 
 
 @click.command()
-@click.option('--repo', required=True,
-              help='Name of the GitHub repository')
-@click.option('--commit', callback=validate_commit_sha1, required=True,
-              help='The 40 character SHA1 string for the commit.')
-@click.option('--status', required=True,
-              type=click.Choice(['error', 'failure', 'pending', 'success']),
-              help='The status of the commit')
-@click.option('--description', required=True, help='Description for the test')
+@click.option("--repo", required=True, help="Name of the GitHub repository")
+@click.option(
+    "--commit",
+    callback=validate_commit_sha1,
+    required=True,
+    help="The 40 character SHA1 string for the commit.",
+)
+@click.option(
+    "--status",
+    required=True,
+    type=click.Choice(["error", "failure", "pending", "success"]),
+    help="The status of the commit",
+)
+@click.option("--description", required=True, help="Description for the test")
 def update(repo, commit, status, description):
     """If all options are provided, update GitHub
 
@@ -173,7 +195,7 @@ def update(repo, commit, status, description):
             --status=pending
            --description="Tests are running."
     """
-    github_token = os.environ.get('GITHUB_COMMIT_STATUS_TOKEN', INVALID_TOKEN)
+    github_token = os.environ.get("GITHUB_COMMIT_STATUS_TOKEN", INVALID_TOKEN)
     update_github(repo, github_token, commit, status, description)
 
 
@@ -182,5 +204,5 @@ cli.add_command(prompt)
 cli.add_command(update)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

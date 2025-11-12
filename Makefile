@@ -51,7 +51,10 @@ clean-test: ## remove test and coverage artifacts
 
 lint: ## check style with pylint and black
 	pylint github_commit_status tests
-	black --check github_commit_status tests
+	black --check --line-length=80 github_commit_status tests
+
+black: ## reformat code with black at 80 characters
+	black --line-length=80 github_commit_status tests
 
 reqs: ## Update all requirements with pip-compile
 	pip-compile --upgrade pyproject.toml -o requirements/requirements.txt
