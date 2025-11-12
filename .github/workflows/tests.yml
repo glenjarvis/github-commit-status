@@ -35,4 +35,4 @@ jobs:
 
     - name: Run linting
       run: |
-        make lint || true ## We want to see the linting. But, possibly not fail PR
+        make lint
