@@ -119,20 +119,20 @@ def cli():
 @click.command()
 @click.option(
     "--github-token",
+    envvar="GITHUB_COMMIT_STATUS_TOKEN",
     prompt="GitHub Token",
-    default=lambda: os.environ.get("GITHUB_COMMIT_STATUS_TOKEN", ""),
 )
 @click.option(
     "--repo",
+    envvar="GITHUB_COMMIT_STATUS_REPO",
     prompt="Name of the GitHub repository",
-    default=lambda: os.environ.get("GITHUB_COMMIT_STATUS_REPO", ""),
     help="Name of the GitHub repository",
 )
 @click.option(
     "--commit",
+    envvar="GITHUB_COMMIT_STATUS_COMMIT",
     callback=validate_commit_sha1,
     prompt="Commit SHA",
-    default=lambda: os.environ.get("GITHUB_COMMIT_STATUS_COMMIT"),
     help="The 40 character SHA1 string for the commit.",
 )
 @click.option(
