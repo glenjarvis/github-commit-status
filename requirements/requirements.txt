@@ -32,7 +32,7 @@ toml==0.10.2
     # via github_commit_status (pyproject.toml)
 typing-extensions==4.15.0
     # via pygithub
-urllib3==2.5.0
+urllib3==2.6.0
     # via
     #   pygithub
     #   requests
