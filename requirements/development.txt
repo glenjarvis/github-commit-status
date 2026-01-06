@@ -148,7 +148,7 @@ pymdown-extensions==10.17
     # via
     #   mkdocs-material
     #   mkdocstrings
-pynacl==1.6.1
+pynacl==1.6.2
     # via pygithub
 pyproject-api==1.10.0
     # via tox
