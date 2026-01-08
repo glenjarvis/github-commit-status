@@ -184,7 +184,7 @@ tox==4.32.0
     # via github_commit_status (pyproject.toml)
 typing-extensions==4.15.0
     # via pygithub
-urllib3==2.6.0
+urllib3==2.6.3
     # via
     #   pygithub
     #   requests
