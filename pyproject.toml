@@ -3,23 +3,30 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "github_commit_status"
-version = "1.4.1"
+name = "github-commit-status"
+version = "1.5.0"
 description = "A simple command line for updating a commit's status on GitHub"
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
     { name = "Glen Jarvis", email = "glen@glenjarvis.com" }
 ]
 requires-python = ">=3.10"
 keywords = ["git", "github", "commit", "github_commit_status"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+]
 dependencies = [
-    "toml>=0.10",
     "click>=8.0",
     "pygithub>=1.51",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest>5",
     "pylint>=2.0",
@@ -29,17 +36,16 @@ dev = [
     "mkdocs>=1.5",
     "mkdocs-material>=9.4",
     "mkdocstrings-python>=1.7",
-    "pip-tools>=7.0",
     "twine>=4.0",
 ]
 
 [project.scripts]
-github_commit_status = "github_commit_status.cli:cli"
+github-commit-status = "github_commit_status.cli:cli"
 gcs = "github_commit_status.cli:cli"
 
 [project.urls]
-Repository = "https://github.com/glenjarvis/github_commit_status"
-Homepage = "https://github.com/glenjarvis/github_commit_status"
+Repository = "https://github.com/glenjarvis/github-commit-status"
+Homepage = "https://github.com/glenjarvis/github-commit-status"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -53,4 +59,3 @@ include = [
     "/Makefile",
     "/pyproject.toml",
 ]
-

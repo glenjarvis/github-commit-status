@@ -1,4 +1,4 @@
-# github_commit_status
+# github-commit-status
 
 A simple command line for updating a commit's status in GitHub. This can be a
 useful demo when teaching a course on Git/GitHub.
@@ -8,48 +8,12 @@ useful demo when teaching a course on Git/GitHub.
 [![Documentation Status](https://readthedocs.org/projects/github_commit_status/badge/)](https://github-commit-status.readthedocs.io/en/stable/) [![Tests](https://github.com/glenjarvis/github-commit-status/actions/workflows/tests.yml/badge.svg)](https://github.com/glenjarvis/github-commit-status/actions/workflows/tests.yml)
 
 ---
-### Alert: PEP 517 and the --no-use-pep517 Flag
 
-**Temporarily**, please use pip versions less than 25.3 (`pip install
-"pip<25.3"`). Issue comes from external library `pip-tools`. Details:
-
-[PEP 517](https://peps.python.org/pep-0517/) is the standard specification for
-how Python packages are built. Historically, pip included a `--no-use-pep517`
-flag that bypassed this standard and used the older setuptools-based build
-method directly.
-
-`pip-tools` (the tool we use to lock dependencies) internally calls pip with the
-`--no-use-pep517` flag by default. This was an implementation detail of how
-`pip-tools` compiled dependency trees.
-
-In `pip 25.3` (released November 2025), pip removed the `--no-use-pep517` flag
-entirely.  Since [PEP 517](https://peps.python.org/pep-0517/) is now finalized
-and the standard, `pip` no longer provides an escape hatch to avoid it. This is
-the correct behavior -- pip now requires all packages to be [PEP
-517](https://peps.python.org/pep-0517/) compliant.
-
-However, `pip-tools 7.5.1` (the latest version) still tries to use this removed flag,
-causing an `TypeError: RequirementCommand.make_resolver() got an unexpected
-keyword argument 'use_pep517'`.
-
-#### Temporary Workaround
-
-Until `pip-tools` is patched to work with `pip 25.3+`, we are constraining
-`pip` to version <25.3 by running:
-
-```
-pip install "pip<25.3"
-```
-
-This is temporary. Once `pip-tools` releases a [fixed
-version](https://github.com/jazzband/pip-tools/issues/2252), this constraint
-can be removed.
-
-- [GitHub repo](https://github.com/glenjarvis/github_commit_status/)
+- [GitHub repo](https://github.com/glenjarvis/github-commit-status/)
 - [Online
   Documentation](https://github-commit-status.readthedocs.io/)
 - [Free
-  Software](https://github.com/glenjarvis/github_commit_status/blob/main/LICENSE)
+  Software](https://github.com/glenjarvis/github-commit-status/blob/main/LICENSE)
 
 ## How to Use
 
@@ -61,13 +25,13 @@ coding standards, etc. Continuous Integration tools, like Travis, use
 this to update the status of the commit that you see in Pull Requests in
 GitHub.
 
-![Figure 1 Pull Request Example](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_1_background.png?raw=true)
+![Figure 1 Pull Request Example](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_1_background.png?raw=true)
 
 This is a fairly simple integration and you can also place your own
 checks here. In the following example, I made the status pending with a
 yellow circle with the phrase "You know you can change this, right?"
 
-![Custom Status Example](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_2_custom_status.png?raw=true)
+![Custom Status Example](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_2_custom_status.png?raw=true)
 
 This command line tool will allow you to update the status of any commit
 that you have access to in GitHub. It was built to be a teaching tool
@@ -116,7 +80,7 @@ In the upper right hand corner, you will see your avatar photo (or a
 default avatar image). When you click the avatar, there will be a drop
 down menu with menu options. Choose the **Settings** option.
 
-![Upper Right Hand Corner Menu](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_3_account_settings.png?raw=true)
+![Upper Right Hand Corner Menu](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_3_account_settings.png?raw=true)
 
 #### Developer Settings
 
@@ -124,14 +88,14 @@ On the next page that is loaded, the Profile settings page, you will see
 another menu to the left. It is a longer menu where the bottom looks
 similar to the following. Choose **Developer settings**:
 
-![Developer Settings Menu](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_4_developer_settings.png?raw=true)
+![Developer Settings Menu](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_4_developer_settings.png?raw=true)
 
 #### Create a Personal Access Token
 
 On the next page, the Developer Settings page, you will see one final
 menu. Choose **Personal access tokens**:
 
-![Personal Access Token Menu](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_5_personal_accesstokens.png?raw=true)
+![Personal Access Token Menu](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_5_personal_accesstokens.png?raw=true)
 
 1.  Press the button to **Generate new token**.
 
@@ -142,7 +106,7 @@ menu. Choose **Personal access tokens**:
     could update your GitHub account. So, keep the scope of this token
     so that it can **only** update or access the commit status.
 
-    ![New Token Screenshot](https://github.com/glenjarvis/github_commit_status/blob/main/docs/imgs/figure_6_generate_personal_access_tokens.png?raw=true)
+    ![New Token Screenshot](https://github.com/glenjarvis/github-commit-status/blob/main/docs/imgs/figure_6_generate_personal_access_tokens.png?raw=true)
 
 4.  Scroll to the bottom of click the green **Generate token** button.
 
@@ -165,11 +129,11 @@ mode and example.
 
 1.  Install:
 
-        pip install github_commit_status
+        pip install github-commit-status
 
 2.  Run:
 
-        github_commit_status prompt
+        github-commit-status prompt
 
 3.  Enter the data that you have collected (e.g., Personal Access Token,
     commit SHA, etc.)
@@ -179,7 +143,7 @@ mode and example.
     intentionally did here. I ensured this token was deleted before I
     published this:
 
-        $ github_commit_status prompt
+        $ github-commit-status prompt
 
         GitHub Token [26fee6a5d440111a2648312d458b6b4e44c20c1d]:
         Name of the GitHub repository []: my_target_repo
@@ -207,12 +171,12 @@ example, in a bash shell:
 
 1.  Install:
 
-        pip install github_commit_status
+        pip install github-commit-status
 
 2.  To see command line options that can be provided:
 
-        $ github_commit_status update --help
-        Usage: github_commit_status update [OPTIONS]
+        $ github-commit-status update --help
+        Usage: github-commit-status update [OPTIONS]
 
           If all options are provided, update GitHub
 
@@ -229,7 +193,7 @@ example, in a bash shell:
     to be pre-set in environment variable
     **GITHUB_COMMIT_STATUS_TOKEN**:
 
-        $ github_commit_status update --repo=my_target_repo \
+        $ github-commit-status update --repo=my_target_repo \
             --commit="2dd5f9ce1108d69e863444ee6486e64e0299868f" \
             --status=pending \
             --description="Tests are running."
@@ -243,12 +207,12 @@ always be given.
 You can contribute in many ways:
 
 - [Report
-  bugs](https://github.com/glenjarvis/github_commit_status/issues)
-- [Write Documentation](https://github_commit_status.readthedocs.io/)
-- [Fix bugs](https://github.com/glenjarvis/github_commit_status/issues)
+  bugs](https://github.com/glenjarvis/github-commit-status/issues)
+- [Write Documentation](https://github-commit-status.readthedocs.io/)
+- [Fix bugs](https://github.com/glenjarvis/github-commit-status/issues)
 
 To maximize the chance that your hard work gets merged, we have these
 guidelines to guide you along the way to a successfully merged Pull
 Request:
 
-- [Contributing](https://github.com/glenjarvis/github_commit_status/blob/main/CONTRIBUTING.md)
+- [Contributing](https://github.com/glenjarvis/github-commit-status/blob/main/CONTRIBUTING.md)

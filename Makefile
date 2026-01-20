@@ -57,9 +57,8 @@ black: ## reformat code with black at 80 characters
 	black --line-length=80 github_commit_status tests
 
 reqs: ## Update all requirements with pip-compile
-	pip-compile --upgrade pyproject.toml -o requirements/requirements.txt
-	pip-compile --upgrade pyproject.toml --extra dev -o requirements/development.txt
-	pip list --format=freeze > requirements/freeze.txt
+	uv export --no-dev  > requirements/requirements.txt 
+	uv export --only-dev  > requirements/development.txt 
 
 test: ## run tests quickly with the default Python
 	python tests/test_github_commit_status.py
@@ -97,7 +96,7 @@ release: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
-	python -m build
+	uv build
 	ls -l dist
 
 install: ## install the package in editable mode for development

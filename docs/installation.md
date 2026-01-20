@@ -2,13 +2,13 @@
 
 ## Stable release
 
-To install github_commit_status, run this command in your terminal:
+To install github-commit-status, run this command in your terminal:
 
 ``` console
-$ pip install github_commit_status
+$ pip install github-commit-status
 ```
 
-This is the preferred method to install github_commit_status, as it will
+This is the preferred method to install github-commit-status, as it will
 always install the most recent stable release.
 
 If you don't have [pip](https://pip.pypa.io) installed, this [Python
@@ -18,20 +18,20 @@ can guide you through the process.
 
 ## From sources
 
-The sources for github_commit_status can be downloaded from the [Github
-repo](https://github.com/glenjarvis/github_commit_status).
+The sources for github-commit-status can be downloaded from the [Github
+repo](https://github.com/glenjarvis/github-commit-status).
 
 You can either clone the public repository:
 
 ``` console
-$ git clone git://github.com/glenjarvis/github_commit_status
+$ git clone git://github.com/glenjarvis/github-commit-status
 ```
 
 Or download the
-[tarball](https://github.com/glenjarvis/github_commit_status/tarball/main):
+[tarball](https://github.com/glenjarvis/github-commit-status/tarball/main):
 
 ``` console
-$ curl  -OL https://github.com/glenjarvis/github_commit_status/tarball/main
+$ curl  -OL https://github.com/glenjarvis/github-commit-status/tarball/main
 ```
 
 Once you have a copy of the source, you can install it with:

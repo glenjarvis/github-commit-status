@@ -10,7 +10,7 @@ Guidelines may feel intimidating. Consider taking my online course [How
 to contribute to an Open Source
 Project](https://GlenJarvis.com/v/how-to-open-source).
 
-Here's how to set up **github_commit_status** for local development.
+Here's how to set up **github-commit-status** for local development.
 
 ## Getting Started!
 
@@ -53,8 +53,8 @@ If you need help with background knowledge, see online training video:
 2.  Clone the project:
 
     > ``` bash
-    > $ git clone https://github.com/glenjarvis/github_commit_status.git
-    > $ cd github_commit_status
+    > $ git clone https://github.com/glenjarvis/github-commit-status.git
+    > $ cd github-commit-status
     > ```
 
 3.  Make a virtualenv named **venv** for your Python environment of
@@ -91,20 +91,11 @@ If you need help with background knowledge, see online training video:
     > }
     > ```
 
-5.  Ensure you have a version of pip less than version 25.3 (until a pip-tools
-    bug is fixed):
+5.  Install the project with development dependencies:
 
-    > ``` bash
-    > (venv)$ pip install "pip<25.3"
-    > ```
-
-   (See [Project Documentation](https://github-commit-status.readthedocs.io/en/stable/) for
-   an explanation of the pip version constraint.)
-
-6.  Install the project with development dependencies using Hatch:
-
-    This project uses pip-tools for dependency management. Install the project
-    in editable mode with development dependencies:
+    This project uses [uv](https://docs.astral.sh/uv/) for dependency management,
+    but pip works as well. Install the project in editable mode with development
+    dependencies:
 
     > ``` bash
     > (venv)$ pip install -e ".[dev]"
@@ -116,7 +107,7 @@ If you need help with background knowledge, see online training video:
     > (venv)$ pip install -r requirements/development.txt
     > ```
 
-7.  (optional) Install the Git Hooks. Git Hooks are a way of running
+6.  (optional) Install the Git Hooks. Git Hooks are a way of running
     code locally against your commits before you make them. Often this
     can catch errors before they are pushed to GitHub.
 
@@ -141,19 +132,16 @@ If you need help with background knowledge, see online training video:
     > $ make hooks-go-away
     > ```
 
-8. Check out a topic branch and begin working.
+7. Check out a topic branch and begin working.
 
 ### Extra Code Style
 
 - Functions and methods should be as short as possible, breaking
   concepts into smaller functions/methods whenever possible.
 
-- The pull request should work for Python 3.5, 3.6, 3.7, 3.8, and for
-  PyPy. When you push to GitHub, we will check this for you. If you want
-  to test it yourself, either run <span class="title-ref">tox</span>
-  locally, or check
-  <https://travis-ci.org/glenjarvis/github_commit_status/pull_requests>
-  and make sure that the tests pass for all supported Python versions:
+- The pull request should work for Python 3.10, 3.11, and 3.12. When you
+  push to GitHub, GitHub Actions will check this for you. If you want
+  to test it yourself, run tox locally:
 
       $ tox
 
@@ -185,14 +173,12 @@ If you need help with background knowledge, see online training video:
 
 ### Tips and Tricks
 
-- TravisCI will run tests against your pull requests and catch test
-  errors:
-  <https://travis-ci.org/glenjarvis/github_commit_status/pull_requests>
+- GitHub Actions will run tests against your pull requests and catch test
+  errors.
 
-- The pull request should work for Python 3.5, 3.6, 3.7, 3.8 and for
-  PyPy. Running `tox` locally will help catch errors across versions of
-  Python and make sure that the tests pass for all supported Python
-  versions:
+- The pull request should work for Python 3.10, 3.11, and 3.12. Running
+  `tox` locally will help catch errors across versions of Python and make
+  sure that the tests pass for all supported Python versions:
 
       $ tox
 
