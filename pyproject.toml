@@ -36,7 +36,6 @@ dev = [
     "mkdocs>=1.5",
     "mkdocs-material>=9.4",
     "mkdocstrings-python>=1.7",
-    "twine>=4.0",
 ]
 
 [project.scripts]

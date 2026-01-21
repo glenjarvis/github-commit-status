@@ -24,10 +24,10 @@ except:
 webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
 endef
 export BROWSER_PYSCRIPT
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
+BROWSER := uv run python -c "$$BROWSER_PYSCRIPT"
 
 help:
-	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
+	@uv run python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
@@ -50,27 +50,27 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with pylint and black
-	pylint github_commit_status tests
-	black --check --line-length=80 github_commit_status tests
+	uv run pylint github_commit_status tests
+	uv run black --check --line-length=80 github_commit_status tests
 
 black: ## reformat code with black at 80 characters
-	black --line-length=80 github_commit_status tests
+	uv run black --line-length=80 github_commit_status tests
 
-reqs: ## Update all requirements with pip-compile
-	uv export --no-dev  > requirements/requirements.txt 
-	uv export --only-dev  > requirements/development.txt 
+reqs: ## Update all requirements with uv export
+	uv export --no-dev --no-emit-project > requirements/requirements.txt
+	uv export --only-dev --no-emit-project > requirements/development.txt 
 
 test: ## run tests quickly with the default Python
-	python tests/test_github_commit_status.py
+	uv run python tests/test_github_commit_status.py
 
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
 	git tag -s v$(VERSION) -m 'Release $(VERSION)'
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source github_commit_status python tests/test_github_commit_status.py
-	coverage report -m
-	coverage html
+	uv run coverage run --source github_commit_status tests/test_github_commit_status.py
+	uv run coverage report -m
+	uv run coverage html
 
 git-hook:
 	cp githooks/pre-commit  .git/hooks/
@@ -86,19 +86,19 @@ hooks-go-away: hook-go-away
 
 docs: ## generate MkDocs HTML documentation
 	@echo "+ $@"
-	mkdocs build
+	uv run mkdocs build
 	@$(BROWSER) site/index.html
 
 servedocs: ## serve the docs watching for changes
-	mkdocs serve
+	uv run mkdocs serve
 
 release: dist ## package and upload a release
-	twine upload dist/*
+	uv publish
 
 dist: clean ## builds source and wheel package
 	uv build
 	ls -l dist
 
 install: ## install the package in editable mode for development
-	pip install -e ".[dev]"
+	uv sync --all-groups
 
