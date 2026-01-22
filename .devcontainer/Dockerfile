@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+
 # Create a non-root user
 ARG USERNAME=user
 ARG USER_UID=1000
@@ -21,7 +24,7 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 USER $USERNAME
 WORKDIR /workspace
 
-# Set PATH for pip packages (needed before postCreateCommand runs)
+# Set PATH for local bin (needed before postCreateCommand runs)
 ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
 # Enable bash completion
